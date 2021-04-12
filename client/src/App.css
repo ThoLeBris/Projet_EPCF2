@@ -85,7 +85,7 @@ h1{
 /**      -       A PROPOS      -    */
 
 
-.apropos{
+#apropos{
     width: auto;
     display: flex;
     flex-direction: column;
@@ -94,7 +94,6 @@ h1{
 }
 .largeur{
     width: 70vw;
-    display: flex;
 }
 .flex-row{
     display: flex;
@@ -103,7 +102,6 @@ h1{
 .intro{
     height: 60vh;
     padding: 0px 10px;
-    margin: 0px 5px;
 
     background-color: #B4FFA8;
     border-radius: 5px;
@@ -115,4 +113,117 @@ h1{
     height: 60vh;
     width: auto;
     border-radius: 5px;
+}
+.degustation{
+    margin: 0px 0px 0px 5px;
+}
+.map{
+    margin: 0px 5px 0px 0px;
+}
+
+
+/**      -       PRODUCTS      -    */
+
+
+#products{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.triangle-rouge{
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 150px solid #9A0000;
+    border-left : 150px solid transparent;
+    
+    position: relative;
+    top: -80px;
+    right: -84px;
+}
+.triangle-clairet{
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 150px solid #FA6565;
+    border-left : 150px solid transparent;
+    
+    position: relative;
+    top: -80px;
+    right: -84px;
+}
+.stock{
+    font-family: Roboto-Black;
+    font-size: 1.5em;
+    /* color: white; */
+    
+    position: absolute;
+    top: -160px;
+    left: -75px;
+}
+.photo-produit{
+    height: 30vh;
+    width: auto;
+
+    border-radius: 5px;
+    margin: 10px;
+}
+.top-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.demi-produit{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 49%;
+}
+h2, h3{
+    display: flex;
+    justify-content: center;
+}
+.product-title{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: flex-end;
+
+    position: relative;
+    top: -150px;
+    right: 40px;
+}
+.product-quantity{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: flex-end;
+}
+.decal{
+    position: relative;
+    top: -150px;
+    right: 135px;
+}
+.decal-right{
+    right: 150px;
+}
+.product-info{
+    position: relative;
+    top: -50px;
+}
+.product-description{
+    display: flex;
+    justify-content: center;
+}
+.product-price{
+    display: flex;
+    justify-content: center;
+
+}
+.product-price-content{
+    border: 1px solid black;
+    padding: 10px 25px;
+    margin: 20px;
+
+    background-color: #FFDAA3;
+    border-radius: 5px;
+    font-family: Roboto-Bold;
 }

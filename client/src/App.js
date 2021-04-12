@@ -1,6 +1,7 @@
 import './App.css';
 import Apropos from './components/Apropos';
 import Header from './components/Header';
+import Produits from './components/Produits';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
         <div className="App">
             <Header/>
             <Apropos/>
+            <Produits/>
         </div>
     );
 }
