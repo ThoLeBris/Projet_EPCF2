@@ -1,4 +1,118 @@
-.Header{
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(assets/fonts/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(assets/fonts/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: Roboto-Italic;
+    src: url(assets/fonts/Roboto/Roboto-Italic.ttf);
+}
+@font-face {
+    font-family: Roboto-Black;
+    src: url(assets/fonts/Roboto/Roboto-Black.ttf);
+}
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(assets/fonts/Roboto/Roboto-Thin.ttf);
+}
+.App{
+    font-family: Roboto-Regular;
+    width: 100vw;
+}
+/**      -       HEADER      -    */
+.header{
     height: 90vh;
+    width: 100vw;
     background: url(assets/images/wineyard.jpg) no-repeat center;
+}
+.nav{
+    width: 100vw;
+    font-family: Roboto-Bold, 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    margin: 0px;
+}
+.nav-left{
+    list-style: none;
+    width: 25vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-item{
+    background-color: #36CE00;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+}
+.nav-item:hover{
+    transform: scale(1.05);
+}
+.commander{
+    background-color: #FFF500;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+}
+.commander:hover{
+    transform: scale(1.05);
+}
+.title-bloc{
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    height: 275px;
+    width: 275px;
+    border-radius: 100%;
+}
+h1{
+    font-size: 40px;
+}
+
+
+/**      -       A PROPOS      -    */
+
+
+.apropos{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.largeur{
+    width: 70vw;
+    display: flex;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.intro{
+    height: 60vh;
+    padding: 0px 10px;
+    margin: 0px 5px;
+
+    background-color: #B4FFA8;
+    border-radius: 5px;
+}
+.premiere-ligne{
+    font-family: Roboto-Bold;
+}
+.image{
+    height: 60vh;
+    width: auto;
+    border-radius: 5px;
 }
