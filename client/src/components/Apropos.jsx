@@ -5,7 +5,7 @@ import map from '../assets/images/map.jpg'
 const Apropos = () => {
     return (
         <div id="apropos">
-            <h2>Qui sommes nous ?</h2>
+            <h2 className="qui">Qui sommes nous ?</h2>
             <div className="largeur flex-row">
                 <div className="intro">
                     <div>

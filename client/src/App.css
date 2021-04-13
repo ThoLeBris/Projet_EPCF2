@@ -24,9 +24,9 @@
 }
 /**      -       HEADER      -    */
 .header{
-    height: 90vh;
+    height: 95vh;
     width: 100vw;
-    background: url(assets/images/wineyard.jpg) no-repeat center;
+    background: url(assets/images/wineyard.jpg) no-repeat bottom;
 }
 .nav{
     width: 100vw;
@@ -78,7 +78,7 @@
     border-radius: 100%;
 }
 h1{
-    font-size: 40px;
+    font-size: 50px;
 }
 
 
@@ -99,8 +99,12 @@ h1{
     display: flex;
     flex-direction: row;
 }
+.qui{
+    margin-top: 20px;
+}
 .intro{
     height: 60vh;
+    width: 70%;
     padding: 0px 10px;
 
     background-color: #B4FFA8;
@@ -131,36 +135,26 @@ h1{
     justify-content: center;
     align-items: center;
 }
-.triangle-rouge{
-    display : inline-block;
-    height : 0;
-    width : 0;
-    border-top : 150px solid #9A0000;
-    border-left : 150px solid transparent;
-    
+.top-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     position: relative;
-    top: -80px;
-    right: -84px;
 }
-.triangle-clairet{
-    display : inline-block;
-    height : 0;
-    width : 0;
-    border-top : 150px solid #FA6565;
-    border-left : 150px solid transparent;
-    
+.triangle{
     position: relative;
-    top: -80px;
-    right: -84px;
+    border-radius: 0px 5px;
 }
 .stock{
     font-family: Roboto-Black;
     font-size: 1.5em;
-    /* color: white; */
+    color: white;
     
+    z-index: +1;
+    width: 50px;
     position: absolute;
-    top: -160px;
-    left: -75px;
+    right: 25px;
+    top: -5px;
 }
 .photo-produit{
     height: 30vh;
@@ -173,41 +167,36 @@ h1{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .demi-produit{
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 6px;
     width: 49%;
 }
 h2, h3{
     display: flex;
     justify-content: center;
 }
+h2 {
+    margin: 40px;
+}
 .product-title{
     font-size: 1.5em;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
 
     position: relative;
     top: -150px;
-    right: 40px;
+    left: 70px;
 }
-.product-quantity{
-    font-size: 1.5em;
-    display: flex;
-    justify-content: flex-end;
-}
-.decal{
-    position: relative;
-    top: -150px;
-    right: 135px;
-}
-.decal-right{
-    right: 150px;
+.product-title>h4{
+    margin-bottom: 10px;
 }
 .product-info{
     position: relative;
-    top: -50px;
+    bottom: 20px;
 }
 .product-description{
     display: flex;
@@ -216,7 +205,6 @@ h2, h3{
 .product-price{
     display: flex;
     justify-content: center;
-
 }
 .product-price-content{
     border: 1px solid black;
@@ -226,4 +214,10 @@ h2, h3{
     background-color: #FFDAA3;
     border-radius: 5px;
     font-family: Roboto-Bold;
+}
+.clairet{
+    border: 1px solid black;
+    border-radius: 6px;
+
+    margin-top: 15px;
 }

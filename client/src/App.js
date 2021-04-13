@@ -1,4 +1,5 @@
 import './App.css';
+import'./mediaqueries.css';
 import Apropos from './components/Apropos';
 import Header from './components/Header';
 import Produits from './components/Produits';
