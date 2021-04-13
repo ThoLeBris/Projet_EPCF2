@@ -121,8 +121,8 @@ const Produits = () => {
                         <p>-Charente, Vendée, Bretagne:</p>
                         <p>1 fois tous les 2 mois</p>
                     </div>
-                    <p>Livraison Hors Zone selon le volume, sur devis</p>
-                    <p>Réglement à le livraison</p>
+                    <p>Livraison Hors Zone selon le volume, sur devis.</p>
+                    <p>Réglement à le livraison.</p>
                 </div>
             </div>
         </div>
