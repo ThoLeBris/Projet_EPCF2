@@ -1,53 +1,69 @@
 import React from 'react'
 
 const Commander = () => {
+
     return (
         <div id="commander">
             <h2>Passer commande</h2>
 
-            <div className="form-container">
-                <p>*: champs obligatoires</p>
-                <form method="post" id="form-commande">
-                    <label htmlFor="fullName">Nom: </label>
-                    <input type="text" name="fullName" id="fullName"
-                        className="input-field"
-                        placeholder="Nom Complet"
-                        required/>
+            <form method="post" id="form-commande">
+                <div className="form-container largeur">
+                    <h4>Tous les champs sont obligatoires.</h4>
 
-                    <label htmlFor="email">Adresse email: </label>
-                    <input type="email" name="email" id="email"
-                        className="input-field"
-                        placeholder="exemple@exemple.com"
-                        required/>
+                    <div className="form-item">
+                        <label htmlFor="fullName">Nom: </label>
+                        <input type="text" name="fullName" id="fullName"
+                            className="input-field"
+                            placeholder="Nom Complet"
+                            required/>
+                    </div>
+                    <div className="form-item">
+                        <label htmlFor="email">Adresse email: </label>
+                        <input type="email" name="email" id="email"
+                            className="input-field"
+                            placeholder="exemple@exemple.com"
+                            required/>
+                    </div>
+                    <div className="form-item">
+                        <label htmlFor="phone">Numéro de téléphone: </label>
+                        <input type="text" name="phone" id="phone"
+                            className="input-field"
+                            placeholder="01 02 03 04 05"
+                            required/>
+                    </div>
+                    <div className="form-item">
+                        <label htmlFor="adresse">Adresse: </label>
+                        <input type="text" name="adresse" id="adresse"
+                            className="input-field"
+                            placeholder="1, rue Jean Dupont"
+                            required/>
+                    </div>
+                    <div className="form-item" id="choice">
+                        <label htmlFor="produit">Produit: </label>
+                        <select name="produit" id="produit" className="liste-produits" 
+                        required
+                        >
 
-                    <label htmlFor="phone">Numéro de téléphone: </label>
-                    <input type="text" name="phone" id="phone"
-                        className="input-field"
-                        placeholder="01 02 03 04 05"
-                        required/>
-                    
-                    <label htmlFor="adresse">Adresse: </label>
-                    <input type="text" name="adresse" id="adresse"
-                        className="input-field"
-                        placeholder="1, rue Jean Dupont"
-                        required/>
+                            <option hidden select >Choisissez</option>
+                            <option value="rouge10L">Cubi de Rouge 10L</option>
+                            <option value="rouge5L">Cubi de Rouge 5L</option>
+                            <option value="clairet5L">Cubi de Clairet 5L</option>
+                            <option value="caisseMethode">Caisse de Méthode</option>
 
-                    <label htmlFor="produit">Produit: </label>
-                    <select name="produit" id="produit" className="liste-produits" required>
-                        <option hidden selected >Choisissez</option>
-                        <option value="rouge10L">Cubi de Rouge 10L</option>
-                        <option value="rouge5L">Cubi de Rouge 5L</option>
-                        <option value="clairet5L">Cubi de Clairet 5L</option>
-                        <option value="caisseMethode">Caisse de Méthode</option>
-                    </select>
+                        </select>
 
-                    <label htmlFor="produits-quantity">Quantité: </label>
-                    <input type="number" name="produits-quantity" id="produits-quantity"
-                        className="input-field"
-                        required/>
-
-                </form>
-            </div>
+                        <label htmlFor="produits-quantity">Quantité: </label>
+                        <input type="number" name="produits-quantity" id="produits-quantity"
+                            className="input-field number"
+                            required
+                            value="1"
+                            min="1"
+                            onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
+                    </div>
+                    <div className="add-product"> Ajouter un produit</div>
+                </div>
+                <input type="submit" value="Envoyer la commande" className="btn-envoyer"/>
+            </form>
         </div>
     )
 }
