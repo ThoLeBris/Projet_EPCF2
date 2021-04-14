@@ -320,3 +320,14 @@ h2 {
     color: white;
     font-size: 1.75em;
 }
+.line-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.line{
+    height: 1px;
+    width: 60%;
+    background-color: black;
+    margin: 15px 0px;
+}

@@ -32,13 +32,16 @@ const Commander = () => {
                             required/>
                     </div>
                     <div className="form-item">
-                        <label htmlFor="adresse">Adresse: </label>
+                        <label htmlFor="adresse">Adresse complète: </label>
                         <input type="text" name="adresse" id="adresse"
                             className="input-field"
                             placeholder="1, rue Jean Dupont"
                             required/>
                     </div>
-                    <div className="form-item" id="choice">
+                    
+                    <div className="line-container"><div className="line"></div></div>
+
+                    <div className="form-item choice">
                         <label htmlFor="produit">Produit: </label>
                         <select name="produit" id="produit" className="liste-produits" 
                         required
@@ -61,6 +64,7 @@ const Commander = () => {
                             onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                     </div>
                     <div className="add-product"> Ajouter un produit</div>
+                    <p>Réglement à la livraison.</p>
                 </div>
                 <input type="submit" value="Envoyer la commande" className="btn-envoyer"/>
             </form>
