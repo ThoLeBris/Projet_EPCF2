@@ -8,7 +8,7 @@ const Commander = () => {
 
             <form method="post" id="form-commande">
                 <div className="form-container largeur">
-                    <h4>Tous les champs sont obligatoires.</h4>
+                    <div className="gras">Tous les champs sont obligatoires.</div>
 
                     <div className="form-item">
                         <label htmlFor="fullName">Nom: </label>
@@ -64,10 +64,16 @@ const Commander = () => {
                             onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                     </div>
                     <div className="add-product"> Ajouter un produit</div>
-                    <p>Réglement à la livraison.</p>
+                    <div className="gras margin">Réglement à la livraison.</div>
                 </div>
-                <input type="submit" value="Envoyer la commande" className="btn-envoyer"/>
+                <div className="submit-container">
+                    <input type="submit" value="Envoyer la commande" className="btn-envoyer"/>
+                </div>
             </form>
+            <div className="validate">
+                <p>Votre commande a bien été enregistrée.</p>
+                <p>Merci de votre commande, nous allons vous contacter dès que possible afin de la valider.</p>
+            </div>
         </div>
     )
 }

@@ -276,7 +276,6 @@ h2 {
     border: 1px solid black;
     border-radius: 6px;
     padding: 10px;
-    height: 40vh;
 }
 #commander form{
     display: flex;
@@ -286,7 +285,7 @@ h2 {
 }
 .form-item{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 15px 0px;
 }
 .form-item label,input,select{
@@ -302,10 +301,36 @@ h2 {
 }
 .add-product{
     display: inline-block;
-    background-color: #1A5AFF;
+    background-color: rgb(26, 90, 255);
     color: white;
-    padding: 10px;
     border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    
+    overflow: hidden;
+    position: relative;
+}
+.add-product:hover::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(to bottom, rgba(26, 90, 255, 0), rgba(255,255,255,0.5) 50%, rgba(26, 90, 255, 0));
+    transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+.add-product:hover::after, .btn-envoyer:focus::after{
+    animation: sheen 1s forwards;
+}
+@keyframes sheen {
+    100% {
+      transform: rotateZ(60deg) translate(1em, -9em);
+    }
+}
+
+.submit-container{
+    height: 120px;
 }
 .btn-envoyer{
     height: 100px;
@@ -319,7 +344,9 @@ h2 {
     font-family: Roboto-Bold;
     color: white;
     font-size: 1.75em;
+    cursor: pointer;
 }
+
 .line-container{
     width: 100%;
     display: flex;
@@ -330,4 +357,70 @@ h2 {
     width: 60%;
     background-color: black;
     margin: 15px 0px;
+}
+.gras{
+    font-family: Roboto-Bold;
+}
+.margin{
+    margin: 20px 0px 10px 0px;
+}
+
+
+/* !    -   VALIDATION  -    */
+
+/* changer "display: flex"  par "none", et rendre "flex" avec react */
+.validate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+    font-family: Roboto-Bold;
+    background-color: #B4FFA8;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+
+/**      -       CONTACT      -    */
+
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #B4FFA8;
+    font-family: Roboto-Bold;
+    border-radius: 6px;
+    width: 50%;
+    padding: 10px;
+}
+
+
+/**      -       FOOTER      -    */
+
+
+#footer{
+    margin-top: 50px;
+    height: 70px;
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+.link-admin{
+    position: absolute;
+    right: 50px;
 }
