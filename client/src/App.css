@@ -259,7 +259,17 @@ h2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 80%;
+}
+.ligne-livraison p{
+    width: 320px;
+}
+.ligne-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 

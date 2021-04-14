@@ -113,13 +113,15 @@ const Produits = () => {
                 <h2>Livraison</h2>
                 <div className="fond-rouge">
                     <h3>Les zones de livraisons régulières :</h3>
-                    <div className="ligne-livraison">
-                        <p>- Gironde: </p>
-                        <p>2 fois par mois</p>
-                    </div>
-                    <div className="ligne-livraison">
-                        <p>- Charente, Vendée, Bretagne:</p>
-                        <p>1 fois tous les 2 mois</p>
+                    <div className="ligne-container">
+                        <div className="ligne-livraison">
+                            <p>- Gironde: </p>
+                            <p>2 fois par mois</p>
+                        </div>
+                        <div className="ligne-livraison">
+                            <p>- Charente, Vendée, Bretagne:</p>
+                            <p>1 fois tous les 2 mois</p>
+                        </div>
                     </div>
                     <p>Livraison Hors Zone selon le volume, sur devis.</p>
                     <p>Réglement à le livraison.</p>
