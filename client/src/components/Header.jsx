@@ -4,14 +4,14 @@ import logo from '../assets/images/logo.png'
 
 const Header = () => {
     return (
-        <div className="header">
+        <header className="header">
             <Nav/>
             <div className="title-bloc">
                 <img src={logo} alt="logo" className="logo"/>
                 <h1>Vindici</h1>
             </div>
             
-        </div>
+        </header>
     )
 }
 

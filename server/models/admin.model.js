@@ -8,7 +8,7 @@ const adminSchema = new mongoose.Schema({
     },
     password:{
         type: String,
-        required
+        required: true
     },
     idAdmin:{
         type: Boolean,

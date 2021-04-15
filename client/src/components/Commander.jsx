@@ -1,6 +1,27 @@
 import React from 'react'
+// import choice from './choice';
+
+    
+// let btnEnvoyer = document.getElementById('envoyer');
+// let divValidation = document.getElementById('validated');
+
+// function divValidated() {
+//     if(getComputedStyle(document.getElementById('validated')).style.display === "none"){
+//         divValidation.style.display = "flex";
+//     }else{
+//         divValidation.style.display = "none";
+//     }
+// }
+//     btnEnvoyer.onclick = divValidated();
+// const btnAddProduct = document.getElementById("form">"div">"add-pruduct");
+//     function addProduct() {
+//         createElement(choice);
+//     }
+//     btnAddProduct.onclick = addProduct();
+    
 
 const Commander = () => {
+
 
     return (
         <div id="commander">
@@ -44,8 +65,7 @@ const Commander = () => {
                     <div className="form-item choice">
                         <label htmlFor="produit">Produit: </label>
                         <select name="produit" id="produit" className="liste-produits" 
-                        required
-                        >
+                        required>
 
                             <option hidden select >Choisissez</option>
                             <option value="rouge10L">Cubi de Rouge 10L</option>
@@ -63,16 +83,25 @@ const Commander = () => {
                             min="1"
                             onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                     </div>
-                    <div className="add-product"> Ajouter un produit</div>
+                    {/* //{choice}
+                    {choice}
+                    {choice} */}
+                    <div className="add-product" id="add-product" >
+                        {/* onClick=addProduct() */}
+                        Ajouter un produit
+                    </div>
                     <div className="gras margin">Réglement à la livraison.</div>
                 </div>
                 <div className="submit-container">
-                    <input type="submit" value="Envoyer la commande" className="btn-envoyer"/>
+                    <input type="submit" value="Envoyer la commande" className="btn-envoyer"
+                    id="envoyer"/>
                 </div>
             </form>
-            <div className="validate">
+            
+            {/* //TODO : faire apparaitre à la validation */}
+            <div className="validate" id="validated">
                 <p>Votre commande a bien été enregistrée.</p>
-                <p>Merci de votre commande, nous allons vous contacter dès que possible afin de la valider.</p>
+                <p>Merci de votre commande, nous allons vous contacter dès que possible afin de la valider avec vous.</p>
             </div>
         </div>
     )
