@@ -8,7 +8,11 @@ import { useMemo, useState, useEffect } from 'react'
 import { AdminContext } from './AdminContext';
 
 
-const [admin,setAdmin] = useState(null);
+
+
+function App() {
+    
+    const [admin,setAdmin] = useState(null);
 
     const value = useMemo(() => ({admin,setAdmin}), [admin,setAdmin]);
 
@@ -24,13 +28,12 @@ const [admin,setAdmin] = useState(null);
                 const content = await response.json();
                 
                 if(content._id){
-                    setUser(content);
+                    setAdmin(content);
                 }
             }
         )()
     }, []);
 
-function App() {
     return (
         <div className="App">
             <BrowserRouter>

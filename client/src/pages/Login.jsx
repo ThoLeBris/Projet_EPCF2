@@ -48,7 +48,8 @@ const Login = ()=> {
 
     return (
         <form onSubmit={submit}>
-                <h1 className="">Please sign in</h1>
+                <h1 className="">Administration</h1>
+                <h2>Veuillez vous identifier</h2>
 
                     <input type="text" className="form-control form-floating" id="email-input" placeholder="email@example.com"
                         required
