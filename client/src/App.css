@@ -18,6 +18,12 @@
     font-family: Roboto-Thin;
     src: url(assets/fonts/Roboto/Roboto-Thin.ttf);
 }
+
+@keyframes sheen {
+    100% {
+      transform: rotateZ(60deg) translate(1em, -9em);
+    }
+}
 .App{
     font-family: Roboto-Regular;
     width: 100vw;
@@ -77,7 +83,24 @@
     height: 275px;
     width: 275px;
     border-radius: 100%;
+
+    overflow: hidden;
+    position: relative;
 }
+.logo:hover::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(to bottom, rgba(26, 90, 255, 0), rgba(255,255,255,0.5) 50%, rgba(26, 90, 255, 0));
+    transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+.logo:hover::after, .logo:focus::after{
+    animation: sheen 1s forwards;
+}
+
 h1{
     font-size: 50px;
     margin-top: 10px;
@@ -332,11 +355,6 @@ h2 {
 }
 .add-product:hover::after, .btn-envoyer:focus::after{
     animation: sheen 1s forwards;
-}
-@keyframes sheen {
-    100% {
-      transform: rotateZ(60deg) translate(1em, -9em);
-    }
 }
 
 .submit-container{

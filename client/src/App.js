@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 import'./mediaqueries.css';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Administration from './pages/Administration';
-import Home from './pages/Home';
+import Register from './pages/Register';
 import { useMemo, useState, useEffect } from 'react'
 import { AdminContext } from './AdminContext';
 
@@ -41,6 +42,7 @@ function App() {
                     <Switch>
                         <Route path="/" exact component={Home}/>
                         <Route path="/login" component={Login}/>
+                        <Route path="/register" component={Register}/>
                         <Route path="/administration" component={Administration}/>
                     </Switch>
                 </AdminContext.Provider>
