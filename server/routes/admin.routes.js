@@ -11,13 +11,13 @@ router.post('/register', async (req,res)=>{
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-    const admin = new User({
-        username: req.body.username,
-        email: req.body.email,
+    const admin = new Admin({
+        adminName: req.body.adminName,
+        adminEmail: req.body.adminEmail,
         password: hashedPassword,
     })
 
-    const result = await user.save();
+    const result = await admin.save();
     const {password, ...data} = await result.toJSON();
 
     res.send(data);

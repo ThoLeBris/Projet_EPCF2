@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -5,8 +6,11 @@ const cookieParser = require('cookie-parser');
 
 const adminRoutes = require('./routes/admin.routes');
 
+// const URI = process.env.MONGODB_URL
+
 //? Connect to DB
-mongoose.connect('mongodb://localhost/auth', {
+const URL = process.env.MONGODB_URL;
+mongoose.connect(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }, ()=>{
