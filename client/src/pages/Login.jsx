@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { AdminContext } from '../AdminContext'
 
 const Login = ()=> {
@@ -25,13 +25,13 @@ const Login = ()=> {
             }
         )
         
-        const response = await fetch('http://localhost:8000/vindici', 
+        const response = await fetch('http://localhost:8000/api/admin', 
                 {
                     headers: {'Content-Type':'application/json'},
                     credentials:'include'
                 })
 
-                const content = await response.json();
+        const content = await response.json();
                 
         if(content._id){
             setAdmin(content);
@@ -47,9 +47,9 @@ const Login = ()=> {
     }
 
     return (
-        <form onSubmit={submit}>
-            <h1 className="">Administration</h1>
-            <h2>Veuillez vous identifier</h2>
+        <form onSubmit={submit} className="login-form flex-center">
+            <h2 className="">Administration</h2>
+            <h3>Veuillez vous identifier</h3>
 
                 <input type="text" className="form-control form-floating" id="email-input" placeholder="email@example.com"
                     required
@@ -64,6 +64,7 @@ const Login = ()=> {
                 />
 
             <button className="" type="submit">Se connecter</button>
+            <Link to="/" className="link-home">Retourner sur le site</Link>
         </form>
     )
 }

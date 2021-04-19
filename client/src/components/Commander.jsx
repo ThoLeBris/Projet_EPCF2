@@ -11,6 +11,7 @@ const Commander = () => {
             
                 <Formulaire/>
                 <Validate/>
+                {/* //TODO : a la validation du formulaire, afficher la validation (masquer le formulaire ?)*/}
         </div>
     )
 }

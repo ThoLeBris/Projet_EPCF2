@@ -41,7 +41,7 @@ const form = () => {
                 <div className="line-container"><div className="line"></div></div>
 
                 <Choice/>
-                {/* //en afficher maximum 3 de plus */}
+                {/* //TODO : pouvoir en ajouter au click du btn-add, maximum 3 de plus, pouvoir supprimer 1 ligne avec btn-supp */}
                 <div className="add-product" id="add-product" >
                     {/* onClick=addProduct() */}
                     Ajouter un produit

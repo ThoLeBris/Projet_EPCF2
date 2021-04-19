@@ -31,9 +31,9 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className="flex-center">
             <form onSubmit={submit}>
-                <h1 className="">Please register</h1>
+                <h2 className="">Enregistrer un nouvel administrateur</h2>
 
                     <input type="text" className="" id="username-input" placeholder="User Name"
                         required
