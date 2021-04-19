@@ -23,8 +23,6 @@ const Login = ()=> {
             return null;
         }
     //? jusqu'ici.
-    //! Mais ne redirige pas sur Admininistration comme prévu
-    
 
     const submit = async (e)=>{
         e.preventDefault();
@@ -41,7 +39,7 @@ const Login = ()=> {
             }
         )
         
-        const response = await fetch('http://localhost:8000/api/admin', 
+        const response = await fetch('http://localhost:8000/api/admin/', 
                 {
                     headers: {'Content-Type':'application/json'},
                     credentials:'include'
