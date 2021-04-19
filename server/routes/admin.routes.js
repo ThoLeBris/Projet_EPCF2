@@ -51,7 +51,7 @@ router.post('/login', async (req,res)=>{
     });
 })
 
-//? La route / va servir de route qui récupère mes infos de l'utilisateur authentifié.
+//? La route qui récupère les infos de l'utilisateur authentifié.
 router.get('/', async (req,res)=>{
     try {
         

@@ -6,7 +6,8 @@ const adminSchema = new mongoose.Schema({
         required: true
     },
     adminEmail:{
-        type: String, match: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g,
+        type: String, 
+        // match: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/g,
         unique: true,
         required: true
     },
