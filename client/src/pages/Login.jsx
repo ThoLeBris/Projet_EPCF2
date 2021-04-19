@@ -60,27 +60,29 @@ const Login = ()=> {
     if(admin && redirect){
         return <Redirect to='/administration'/>;
     }
-    
+
     return (
+        
         <form onSubmit={submit} className="login-form flex-center">
-            <h2 className="">Administration</h2>
+            <h2>Administration</h2>
             <h3>Veuillez vous identifier</h3>
 
-                <input type="text" className="form-control form-floating" id="email-input" placeholder="email@example.com"
+                <input type="text" id="email-input" placeholder="Email"
                     required
                     value={adminEmail}
                     onChange={e=> setAdminEmail(e.target.value)}
                 />
 
-                <input type="password" className="" id="password-input" placeholder="Password"
+                <input type="password" id="password-input" placeholder="Mot de passe"
                     required
                     value={password}
                     onChange={e=> setPassword(e.target.value)}
                 />
 
-            <button className="" type="submit">Se connecter</button>
-            <Link to="/" className="link-home">Retourner sur le site</Link>
+            <button className="btn-connect" type="submit">Se connecter</button>
+            <button className="link-home"><Link to="/">Retourner sur le site</Link></button>
         </form>
+        
     )
 }
 

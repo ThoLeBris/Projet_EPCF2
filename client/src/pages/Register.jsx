@@ -34,33 +34,31 @@ const Register = () => {
     // const passwordRegex = new RegExp('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[.!#$%&*+/=?^_{|}~-])[0-9a-zA-Z.!#$%&*+/=?^_{|}~-]{8,}$/')
 
     return (
-        <div className="flex-center">
-            <form onSubmit={submit}>
-                <h2 className="">Enregistrer un nouvel administrateur</h2>
+        <div id="register" className="flex-center">
+            <form onSubmit={submit} className=" flex-center">
+                <h2>Enregistrer un nouvel administrateur</h2>
 
-                    <input type="text" className="" id="username-input" placeholder="User Name"
+                    <input type="text" className="input-field" id="username-input" placeholder="Nom d'utilisateur"
                         required
                         value={adminName}
                         onChange={e=> setAdminName(e.target.value)}
                     />
 
-                    <input type="text" className="" id="email-input" placeholder="email@example.com"
+                    <input type="text" id="email-input" placeholder="email@example.com"
                         required
                         value={adminEmail}
                         // validations={{matchRegExp:emailRegex}}
                         onChange={e=> setAdminEmail(e.target.value)}
                     />
 
-                    <input type="password" className="" id="password-input" placeholder="Password"
+                    <input type="password" id="password-input" placeholder="Mot de passe"
                         required
                         value={password}
                         // validations={{matchRegExp:passwordRegex}}
                         onChange={e=> setPassword(e.target.value)}
                     />
-                    
 
-                <button className="" type="submit">S'enregistrer</button>
-                <div>
+                <div className="flex-center">
                     Le mot de passe contient au moins:
                     <ul>
                         <li>1 minuscule</li>
@@ -68,6 +66,9 @@ const Register = () => {
                         <li>1 caractère spécial</li>
                         <li>8 caractères</li>
                     </ul>
+                </div>
+                <div className="flex-center">
+                    <button className="btn-connect margin" type="submit">S'enregistrer</button>
                 </div>
             </form>
             <div>Déjà un compte ? <Link to="/login">S'identifier</Link>.</div>

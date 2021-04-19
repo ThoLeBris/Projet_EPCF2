@@ -4,7 +4,7 @@ const choice = () => {
     return (
         <div>
             <div className="form-item">
-                <div className="">
+                <div>
                     <label htmlFor="produit">Produit: </label>
                     <select name="produit" id="produit" className="liste-produit" 
                     required>
@@ -24,7 +24,6 @@ const choice = () => {
                     <input type="number" name="produits-quantity" id="produits-quantity"
                         className="input-field number"
                         required
-                        value="1"
                         min="1"
                         onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                 </div>
