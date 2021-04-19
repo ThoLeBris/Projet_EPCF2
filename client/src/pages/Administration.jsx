@@ -19,12 +19,11 @@ const Administration = () => {
         setAdmin(null);
     }
 
-
     let link;
 
     if(!admin){
         link = (
-            <Link to="/login" className="">Se connecter</Link>
+            <button><Link to="/login" className="">Se connecter</Link></button>
         )
     }else{
         link = (
@@ -38,10 +37,10 @@ const Administration = () => {
         )
     }
     return (
-        <div>
+        <div className="flex-center">
             <h2>Administration</h2>
             <div>
-                {admin ? `Bonjour ${admin.adminName}` : `Connectez vous pour avoir accès à l'interface`}
+                {admin ? `Bonjour ${admin.adminName}` : `Connectez-vous pour avoir accès à l'interface`}
             </div>
             
             {link}

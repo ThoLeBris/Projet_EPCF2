@@ -29,6 +29,9 @@ const Register = () => {
     if(redirect){
         return <Redirect to='/login'/>;
     }
+    // TODO: ajouter control de saisie email et mdp, + l'ajouter sur formulaire commande 
+    // const emailRegex = new RegExp('/^[a-zA-Z0-9.!#$%&*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/g');
+    // const passwordRegex = new RegExp('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[.!#$%&*+/=?^_{|}~-])[0-9a-zA-Z.!#$%&*+/=?^_{|}~-]{8,}$/')
 
     return (
         <div className="flex-center">
@@ -44,19 +47,21 @@ const Register = () => {
                     <input type="text" className="" id="email-input" placeholder="email@example.com"
                         required
                         value={adminEmail}
+                        // validations={{matchRegExp:emailRegex}}
                         onChange={e=> setAdminEmail(e.target.value)}
                     />
 
                     <input type="password" className="" id="password-input" placeholder="Password"
                         required
                         value={password}
+                        // validations={{matchRegExp:passwordRegex}}
                         onChange={e=> setPassword(e.target.value)}
                     />
                     
 
                 <button className="" type="submit">S'enregistrer</button>
                 <div>
-                    Mot de passe: au moins 
+                    Le mot de passe contient au moins:
                     <ul>
                         <li>1 minuscule</li>
                         <li>1 MAJUSCULE</li>

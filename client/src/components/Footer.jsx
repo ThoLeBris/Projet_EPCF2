@@ -6,7 +6,7 @@ const Footer = () => {
         <footer id="footer">
             <small className="copyright">©Copyright Thomas Le Bris</small>
             
-            <small className="link-admin"><Link className="link-color" to="/login">Administration</Link></small>
+            <small className="link-admin"><Link className="link-color" to="/administration">Administration</Link></small>
             
         </footer>
     )

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { AdminContext } from '../AdminContext'
 
@@ -9,6 +9,22 @@ const Login = ()=> {
     const [adminEmail,setAdminEmail] = useState("");
     const [password,setPassword] = useState("");
     const [redirect,setRedirect] = useState(false);
+    
+    // TODO
+    //! Enlève l'erreur: Can't perform a React state update on an unmounted component.This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+        const [didMount, setDidMount] = useState(false); 
+
+        useEffect(() => {
+            setDidMount(true);
+            return () => setDidMount(false);
+        }, [])
+
+        if(!didMount) {
+            return null;
+        }
+    //? jusqu'ici.
+    //! Mais ne redirige pas sur Admininistration comme prévu
+    
 
     const submit = async (e)=>{
         e.preventDefault();
@@ -39,13 +55,12 @@ const Login = ()=> {
         setRedirect(true);
     }
 
-    if(admin){
-        return <Redirect to='/'/>;
-    }
-    if(redirect){
+    
+
+    if(admin && redirect){
         return <Redirect to='/administration'/>;
     }
-
+    
     return (
         <form onSubmit={submit} className="login-form flex-center">
             <h2 className="">Administration</h2>
