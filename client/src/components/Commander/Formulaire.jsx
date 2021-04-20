@@ -1,7 +1,7 @@
 import emailjs from 'emailjs-com'
 import React from 'react'
 import Choice from './Choice';
-import Validate from './Validate';
+// import Validate from './Validate';
 
 
 const form = () => {
@@ -11,14 +11,16 @@ const form = () => {
 
         emailjs.sendForm('service_1agx8xg', 'template_32d6wr7', e.target, 'user_PtyYegG9jAOYu02DGPaDt')
         .then((result) => {
+            //TODO : remplacer l'alerte par le component validation
+            alert('Merci d\'avoir commander, nous vous rappelons dès que possible afin de valider avec vous votre commande.')
             console.log(result.text);
         }, (error) => {
             console.log(error.text);
         });
-        e.target.reset(); // pour reset les champs du formulaire, pas tout à fait ce qu'on veut
-        return(
-            <Validate/>
-        )
+        e.target.reset(); 
+        // return(
+        //     <Validate/>
+        // )
     }
 
     return (
