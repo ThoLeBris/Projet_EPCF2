@@ -25,7 +25,7 @@ const form = () => {
         //  method="post" 
         <form onSubmit={sendEmail} id="form-commande">
             <div className="form-container largeur">
-                <div className="gras">Tous les champs sont obligatoires.</div>
+                <div className="gras">Tous les champs sont obligatoires afin que l'on puisse vous contacter.</div>
 
                 <div className="form-item">
                     <label htmlFor="orderName">Nom: </label>
@@ -55,6 +55,7 @@ const form = () => {
                 <div className="line-container"><div className="line"></div></div>
 
                 <Choice/>
+                
                 {/* //TODO : pouvoir en ajouter au click du btn-add, maximum 3 de plus, pouvoir supprimer 1 ligne avec btn-supp */}
                 <div className="add-product" id="add-product" >
                     {/* onClick=addProduct() */}
