@@ -30,4 +30,5 @@ app.use(express.json());
 //? Routes
 app.use('/api/admin', adminRoutes);
 
-app.listen(8000);
+const Port = process.env.PORT;
+app.listen(Port);
