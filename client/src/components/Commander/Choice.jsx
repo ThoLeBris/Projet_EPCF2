@@ -1,14 +1,27 @@
 import React from 'react'
 
 const choice = () => {
+
+    constructor(props){
+        super(props);
+        this.state = {value: "choisissez"};
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e){ 
+        this.setState({value: e.target.value});
+    }
+
     return (
         <div>
             <div className="form-item">
                 <div>
-                    <label htmlFor="produit">Produit: </label>
-                    <select name="produit" id="produit" className="liste-produit" 
-                    required>
-                        {/* //TODO : onChange ou readOnly ?? */}
+                    <label htmlFor="orderProductName">Produit: </label>
+                    <select name="orderProductName" id="orderProductName" className="liste-produit" 
+                    required
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    >
 
                         <option hidden value="choisissez" >Choisissez</option>
                         <option value="rouge10L">Cubi de Rouge 10L</option>
@@ -20,8 +33,8 @@ const choice = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="produits-quantity">Quantité: </label>
-                    <input type="number" name="produits-quantity" id="produits-quantity"
+                    <label htmlFor="orderProductQuantity">Quantité: </label>
+                    <input type="number" name="orderProductQuantity" id="orderProductQuantity"
                         className="input-field number"
                         required
                         min="1"
