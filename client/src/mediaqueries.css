@@ -1,4 +1,191 @@
+@media screen and (max-width: 1450px) {
+    .App{
+        width: 99vw;
+    }
+    
+    .product-title{
+        left: 100px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .product-title{
+        left: 110px;
+    }
+}
 @media screen and (max-width: 1201px), (max-height: 701px){
+
+    .title-bloc{
+        width: 99vw;
+    }
+    h1{
+        color: white;
+    }
+    .product-title{
+        top: 0px;
+        left: 0px;
+    }
+    .product-title h4,div{
+        margin-bottom: 10px;
+    }
+    .full-product-title{
+        top: 0px;
+    }
+}
+
+@media screen and (max-width: 769px) {
     
+    .header{
+        position: relative;
+    }
+    #nav{
+        width: 99vw;
+    }
+    .nav{
+        position: absolute;
+
+        flex-direction: column;
+        align-items: flex-end;
+        width: 99vw;
+        height: 200px;
+        padding-top: 60px;
+        font-size: 20px;
+    }
+    .nav-left{
+        flex-direction: column;
+        width: 120px;
+        text-align: center;
+    }
+    .nav-item{
+        margin: 5px 0px;
+    }
+    .commander{
+        width: 110px;
+    }
+    .presentation{
+        flex-direction: column;
+        align-items: center;
+    }
+    .intro{
+        width: 100%;
+    }
+    .image{
+        height: auto;
+        width: 50vw;
+        margin: 5px 0px;
+    }
+    .reverse{
+        flex-direction: column-reverse;
+    }
+    .top-line{
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+    }
+    .demi-produit{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .photo-produit{
+        height: 40vh;
+    }
+    .form-item{
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-item label,input{
+        width: 200px;
+    }
+    .link-admin{
+        display: none;
+    }
+    .product-price-content{
+        margin: 5px;
+    }
+
+}
+
+@media screen and (max-width: 426px) {
     
+    .largeur{
+        width: 90vw;
+    }
+    .logo{
+        height: auto;
+        width: 175px;
+    }
+    .image{
+        height: auto;
+        width: 70vw;
+    }
+    .photo-produit{
+        height: 30vh;
+    }
+    .photo-full-produit{
+        height: 30vh;
+        margin: 10px;
+    }
+    .triangle{
+        height: 100px;
+    }
+    .stock{
+        top: -10px;
+        right: 5px;
+        font-size: 1em;
+    }
+    .full-product-title{
+        text-align: center;
+    }
+    .fond-rouge{
+        padding: 5px;
+    }
+    .fond-rouge p{
+        margin-top: 0px;
+    }
+    .contact{
+        width: 80%;
+    }
+    .contact p{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    
+    .nav{
+        height: 200px;
+        padding-top: 60px;
+        font-size: 15px;
+    }
+    .nav-left{
+        width: 90px;
+    }
+    .nav-item{
+        margin: 5px 0px;
+    }
+    .commander{
+        width: 80px;
+    }
+    .triangle{
+        height: 75px;
+    }
+    .stock{
+        top: -15px;
+        right: -8px;
+    }
+}
+@media screen and (max-width: 321px) {
+    .header{
+        height: 90vh;
+    }
+    .nav{
+        padding-top: 40px;
+        height: 180px;
+    }
+    .title-bloc{
+        height: 50vh;
+    }
+    .logo{
+        height: auto;
+        width: 125px;
+    }
 }

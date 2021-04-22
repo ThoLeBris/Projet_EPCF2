@@ -6,7 +6,7 @@ const Apropos = () => {
     return (
         <div id="apropos">
             <h2 className="qui">Qui sommes nous ?</h2>
-            <div className="largeur flex-row">
+            <div className="presentation largeur flex-row">
                 <div className="intro">
                     <div>
                         <p className="premiere-ligne">Une propriété familiale,</p>
@@ -27,7 +27,7 @@ const Apropos = () => {
             </div>
 
             <h2>Où sommes-nous ?</h2>
-            <div className="largeur flex-row">
+            <div className="presentation reverse largeur flex-row">
                 <img src={map} alt="map" className="image map"/>
                 <div className="intro">
                     <div>

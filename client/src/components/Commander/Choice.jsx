@@ -4,7 +4,7 @@ const choice = () => {
 
     return (
         <div>
-            <p>Laisser vide les champs inutilisés.</p>
+            <p className="gras">Laisser vide les champs inutilisés.</p>
             <div className="form-item">
                 <div>
                     <label htmlFor="orderProduct">Produit: </label>
