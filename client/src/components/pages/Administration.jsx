@@ -19,14 +19,17 @@ const Administration = () => {
         setAdmin(null);
     }
 
-    let link;
+    let page;
 
     if(!admin){
-        link = (
-            <Link to="/login" className="btn-connect">Se connecter</Link>
+        page = (
+            <>
+                <Link to="/login" className="btn-connect">Se connecter</Link>
+                <Link to="/" className="btn-connect">Retourner sur le site</Link>
+            </>
         )
     }else{
-        link = (
+        page = (
             <div>
                 <Link to="/" className="btn-connect">Retourner sur le site</Link>
                 <Link to="/register" className="btn-connect">Créer un nouvel administrateur</Link>
@@ -41,7 +44,7 @@ const Administration = () => {
                 {admin ? `Bonjour ${admin.adminName}` : `Connectez-vous pour avoir accès à l'interface`}
             </div>
             
-            {link}
+            {page}
 
         </div>
     )
