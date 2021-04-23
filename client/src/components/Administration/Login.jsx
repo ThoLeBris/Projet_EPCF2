@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import { AdminContext } from '../AdminContext'
+import { AdminContext } from '../../AdminContext'
 
 const Login = ()=> {
     

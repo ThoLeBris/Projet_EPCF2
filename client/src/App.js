@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 import'./mediaqueries.css';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Administration from './pages/Administration';
-import Register from './pages/Register';
+import Home from './components/Home/Home';
+import Login from './components/Administration/Login';
+import Administration from './components/Administration/Administration';
+import Register from './components/Administration/Register';
 import { useMemo, useState, useEffect } from 'react'
 import { AdminContext } from './AdminContext';
 

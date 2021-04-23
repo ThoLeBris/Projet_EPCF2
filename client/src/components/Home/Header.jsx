@@ -1,6 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
-import logo from '../assets/images/logo.png'
+import logo from '../../assets/images/logo.png'
 
 const Header = () => {
     return (

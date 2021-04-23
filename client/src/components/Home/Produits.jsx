@@ -1,11 +1,11 @@
 import React from 'react'
-import rouge10L from '../assets/images/rouge10L.jpg'
-import rouge5L from '../assets/images/rouge5L.jpg'
-import triangleRouge from '../assets/images/triangle-rouge.png'
-import rose5L from '../assets/images/rose5L.jpg'
-import triangleClairet from '../assets/images/triangle-clairet.png'
-import methodeRose from '../assets/images/COMTE DANDIRAN-1.png'
-import triangleMethodeRose from '../assets/images/triangle-methode-rose.png'
+import rouge10L from '../../assets/images/rouge10L.jpg'
+import rouge5L from '../../assets/images/rouge5L.jpg'
+import triangleRouge from '../../assets/images/triangle-rouge.png'
+import rose5L from '../../assets/images/rose5L.jpg'
+import triangleClairet from '../../assets/images/triangle-clairet.png'
+import methodeRose from '../../assets/images/COMTE DANDIRAN-1.png'
+import triangleMethodeRose from '../../assets/images/triangle-methode-rose.png'
 
 const Produits = () => {
     return (

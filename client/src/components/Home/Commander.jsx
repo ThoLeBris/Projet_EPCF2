@@ -1,5 +1,5 @@
 import React from 'react';
-import Formulaire from './Commander/Formulaire';
+import Formulaire from '../Commander/Formulaire';
 
 const Commander = () => {
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { AdminContext } from '../AdminContext'
+import { AdminContext } from '../../AdminContext'
 
 const Administration = () => {
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import degustation from '../assets/images/degustation .jpg'
-import map from '../assets/images/map.jpg'
+import degustation from '../../assets/images/degustation .jpg'
+import map from '../../assets/images/map.jpg'
 
 const Apropos = () => {
     return (
