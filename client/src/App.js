@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
 import'./mediaqueries.css';
-import Home from './components/Home/Home';
+import Home from './components/pages/Home';
 import Login from './components/Administration/Login';
-import Administration from './components/Administration/Administration';
+import Administration from './components/pages/Administration';
 import Register from './components/Administration/Register';
 import { useMemo, useState, useEffect } from 'react'
 import { AdminContext } from './AdminContext';

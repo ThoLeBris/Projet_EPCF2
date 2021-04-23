@@ -1,10 +1,10 @@
 import React from 'react';
-import Apropos from './Apropos';
-import Header from './Header';
-import Produits from './Produits';
-import Commander from './Commander';
-import Contact from './Contact';
-import Footer from './Footer';
+import Apropos from '../Home/Apropos';
+import Header from '../Home/Header';
+import Produits from '../Home/Produits';
+import Commander from '../Home/Commander';
+import Contact from '../Home/Contact';
+import Footer from '../Home/Footer';
 
 const Home = () => {
     return (

@@ -27,7 +27,7 @@ const choice = () => {
                         className="input-field number"
                         required
                         min="1"
-                        onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
+                        onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()} />
                 </div>
             </div>
 
