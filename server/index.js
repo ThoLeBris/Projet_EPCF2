@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-const adminRoutes = require('./routes/admin.routes');
+// const adminRoutes = require('./routes/admin.routes');
+const productRoutes = require('./routes/product.routes');
 
 //? Connect to DB
 const URL = process.env.MONGODB_URL;
@@ -28,7 +29,8 @@ app.use(cors({
 app.use(express.json());
 
 //? Routes
-app.use('/api/admin', adminRoutes);
+// app.use('/api/admin', adminRoutes);
+app.use('/api/product', productRoutes);
 
 const Port = process.env.PORT;
 app.listen(Port);

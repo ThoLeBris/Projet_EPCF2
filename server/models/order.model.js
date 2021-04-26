@@ -16,14 +16,6 @@ const orderSchema = new mongoose.Schema({
     orderEmail:{
         type: String,
         required: true
-    },
-    orderProduct:{
-        type: String,
-        required: true
-    },
-    orderProductQuantity:{
-        type: Number,
-        required: true
     }
 })
 
