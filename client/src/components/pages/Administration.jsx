@@ -28,7 +28,7 @@ const Administration = () => {
     const product = fetch('http://localhost:8000/api/product/',
             {
                 method:'GET',
-                headers: {'Content-Type':'application/json'}
+                headers: {'Content-Type':'application/json'},
             }
         )
     
