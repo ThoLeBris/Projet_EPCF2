@@ -19,7 +19,7 @@ const Product = require('../models/product.model');
 //? Lire un produit
 router.get('/', async (req,res)=>{
     try{
-        const product = await Product.find(productId)
+        const product = await Product.find(req.body.productId);
         res.send(product);
 
     }catch (error){
@@ -31,11 +31,13 @@ router.get('/', async (req,res)=>{
 //? Modifier un produit
 //? Swith Stock [En Stock / Rupture]
 // router.post('/switchStock', async (req,res)=>{
+    // const productStock = await Product.find(req.body.productStock);
     // if(productStock == true){
-    //     productStock == false;
+    //     productStock = false;
     // }else{
-    //     productStock == true;
+    //     productStock = true;
     // }
+    // res.send(productStock);
 // })
 
 
