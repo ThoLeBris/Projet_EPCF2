@@ -29,8 +29,9 @@ const Administration = () => {
             {
                 method:'GET',
                 headers: {'Content-Type':'application/json'},
-            }
-        )
+            },
+            )
+    
         const product1 = [
             {productId = 1 },
             {productName = setProductName},
@@ -38,6 +39,7 @@ const Administration = () => {
             {productDescription = setProductDescription},
             {productPrice = setProductPrice}
         ];
+        console.log(product1);
     let page;
 
     if(!admin){
@@ -67,10 +69,10 @@ const Administration = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{product1.productName}</td>
-                            <td>{product1.productStock}</td>
-                            <td>{product1.productDescription}</td>
-                            <td>{product1.productPrice}</td>
+                            <td>{product.productName}</td>
+                            <td>{product.productStock}</td>
+                            <td>{product.productDescription}</td>
+                            <td>{product.productPrice}</td>
                         </tr>
                         <tr>
                             <td>nom2</td>
