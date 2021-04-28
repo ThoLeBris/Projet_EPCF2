@@ -6,10 +6,11 @@ const Administration = () => {
     
     const {admin, setAdmin} = useContext(AdminContext)
 
-    const [productName,setProductName] = useState("");
-    const [productStock,setProductStock] = useState(true);
-    const [productDescription,setProductDescription] = useState("");
-    const [productPrice,setProductPrice] = useState("");
+    const {productId,setProductId} = useState("");
+    const {productName,setProductName} = useState("");
+    const {productStock,setProductStock} = useState(true);
+    const {productDescription,setProductDescription} = useState("");
+    const {productPrice,setProductPrice} = useState("");
 
 
     //? Fonction Log Out qui va déconnecter l'utilisateur actuel
@@ -30,14 +31,29 @@ const Administration = () => {
                 method:'GET',
                 headers: {'Content-Type':'application/json'},
             },
-            )
-    
+        )
+    // const product = [
+    //     {productId : setProductId},
+    //     {productName : setProductName},
+    //     {productStock : setProductStock},
+    //     {productDescription : setProductDescription},
+    //     {productPrice : setProductPrice}
+    // ];
+        // const listProduct = [];
+
         // const product1 = [
-        //     {productId = 1 },
-        //     {productName = setProductName},
-        //     {productStock = setProductStock},
-        //     {productDescription = setProductDescription},
-        //     {productPrice = setProductPrice}
+        //     {productId : 1 },
+        //     {productName : setProductName},
+        //     {productStock : setProductStock},
+        //     {productDescription : setProductDescription},
+        //     {productPrice : setProductPrice}
+        // ];
+        // const product2 = [
+        //     {productId : 2 },
+        //     {productName : setProductName},
+        //     {productStock : setProductStock},
+        //     {productDescription : setProductDescription},
+        //     {productPrice : setProductPrice}
         // ];
 
     let page;
@@ -57,6 +73,21 @@ const Administration = () => {
                     <Link to="/register" className="btn-connect">Créer un nouvel administrateur</Link>
                     <Link to="/administration" onClick={logOut} className="disconnect">Se déconnecter</Link>
                 </div>
+                
+                {/* {
+                    products.map(({product}) => {
+                        return(
+                            <>
+                                <div>{product.productName}</div>
+                                <div>{product.productStock}</div>
+                                <div>{product.productDescription}</div>
+                                <div>{product.productPrice}</div>
+                            </>
+                        )
+                    })
+                } */}
+
+
                 <table>
                     <thead>
                         <tr>
@@ -76,21 +107,21 @@ const Administration = () => {
                         </tr>
                         <tr>
                             <td>nom2</td>
-                            <td>stock1</td>
-                            <td>description1</td>
-                            <td>prix1</td>
+                            <td>stock2</td>
+                            <td>description2</td>
+                            <td>prix2</td>
                         </tr>
                         <tr>
                             <td>nom3</td>
-                            <td>stock1</td>
-                            <td>description1</td>
-                            <td>prix1</td>
+                            <td>stock3</td>
+                            <td>description3</td>
+                            <td>prix3</td>
                         </tr>
                         <tr>
                             <td>nom4</td>
-                            <td>stock1</td>
-                            <td>description1</td>
-                            <td>prix1</td>
+                            <td>stock4</td>
+                            <td>description4</td>
+                            <td>prix4</td>
                         </tr>
                         
                     </tbody>
