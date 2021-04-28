@@ -32,14 +32,14 @@ const Administration = () => {
             },
             )
     
-        const product1 = [
-            {productId = 1 },
-            {productName = setProductName},
-            {productStock = setProductStock},
-            {productDescription = setProductDescription},
-            {productPrice = setProductPrice}
-        ];
-        console.log(product1);
+        // const product1 = [
+        //     {productId = 1 },
+        //     {productName = setProductName},
+        //     {productStock = setProductStock},
+        //     {productDescription = setProductDescription},
+        //     {productPrice = setProductPrice}
+        // ];
+
     let page;
 
     if(!admin){
