@@ -6,11 +6,7 @@ const Administration = () => {
     
     const {admin, setAdmin} = useContext(AdminContext)
 
-    const {productId,setProductId} = useState("");
-    const {productName,setProductName} = useState("");
-    const {productStock,setProductStock} = useState(true);
-    const {productDescription,setProductDescription} = useState("");
-    const {productPrice,setProductPrice} = useState("");
+    
 
 
     //? Fonction Log Out qui va déconnecter l'utilisateur actuel
@@ -25,20 +21,33 @@ const Administration = () => {
         )
         setAdmin(null);
     }
-
+    
+    const {productId,setProductId} = useState("");
+    const {productName,setProductName} = useState("");
+    const {productStock,setProductStock} = useState(true);
+    const {productDescription,setProductDescription} = useState("");
+    const {productPrice,setProductPrice} = useState("");
+    
     const product = fetch('http://localhost:8000/api/product/',
-            {
-                method:'GET',
-                headers: {'Content-Type':'application/json'},
-            },
-        )
-    // const product = [
-    //     {productId : setProductId},
-    //     {productName : setProductName},
-    //     {productStock : setProductStock},
-    //     {productDescription : setProductDescription},
-    //     {productPrice : setProductPrice}
-    // ];
+        {
+            method:'GET',
+            headers: {'Content-Type':'application/json'},
+        },
+        setProductId("id"),
+        setProductName("nom"),
+        setProductStock(true),
+        setProductDescription("description"),
+        setProductPrice("prix"),
+    )
+    
+    // const produit = [{
+    //     productId : setProductId,
+    //     productName : setProductName,
+    //     productStock : setProductStock,
+    //     productDescription : setProductDescription,
+    //     productPrice : setProductPrice
+    // }];
+    console.log(product);
         // const listProduct = [];
 
         // const product1 = [
