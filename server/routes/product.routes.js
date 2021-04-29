@@ -37,15 +37,21 @@ router.get('/getProduct', async (req,res)=>{
 })
 //? Modifier un produit
 //? Swith Stock [En Stock / Rupture]
-// router.post('/switchStock', async (req,res)=>{
-    // const productStock = await Product.find(req.body.productStock);
-    // if(productStock == true){
-    //     productStock = false;
-    // }else{
-    //     productStock = true;
-    // }
-    // res.send(productStock);
-// })
+router.post('/switchStock', async (req,res)=>{
+    try{
+        const productStock = await Product.find({productStock : req.body.productStock});
+        if(productStock == true){
+            productStock = false;
+        }else{
+            productStock = true;
+        }
+        res.send(productStock);
+    }catch (error){
+        return res.status(401).send({
+            message: 'Product Stock not found'
+        })
+    }
+})
 
 
 module.exports = router;

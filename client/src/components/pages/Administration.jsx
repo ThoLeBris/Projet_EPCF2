@@ -1,13 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AdminContext } from '../../AdminContext'
+import { ProductContext } from '../../ProductContext'
 
 const Administration = () => {
     
     const {admin, setAdmin} = useContext(AdminContext)
 
+    const {product, setProduct} = useContext(ProductContext)
     
-
+    const {productId,setProductId} = useState("");
+    const {productName,setProductName} = useState("");
+    const {productStock,setProductStock} = useState(true);
+    const {productDescription,setProductDescription} = useState("");
+    const {productPrice,setProductPrice} = useState("");
 
     //? Fonction Log Out qui va déconnecter l'utilisateur actuel
     const logOut = async (e)=>{
@@ -22,60 +28,34 @@ const Administration = () => {
         setAdmin(null);
     }
     
-    const {productId,setProductId} = useState("");
-    const {productName,setProductName} = useState("");
-    const {productStock,setProductStock} = useState(true);
-    const {productDescription,setProductDescription} = useState("");
-    const {productPrice,setProductPrice} = useState("");
     
-    const product = fetch('http://localhost:8000/api/product/getProduct',
+    
+    const getProduct = fetch('http://localhost:8000/api/product/getProduct',
         {
             method:'GET',
             headers: {'Content-Type':'application/json'},
-        }
+        },
+        setProduct()
     )
-    useEffect(()=>{
-        ( 
-            async ()=> {
-                const response = await fetch('http://localhost:8000/api/product/getProduct', 
-                {
-                    headers: {'Content-Type':'application/json'},
-                    credentials:'include'
-                })
-
-                const content = await response.json();
-                
-                if(content._id){
-                    setProductName(content);
-                }
-            }
-        )()
-    }, [setProductName]);
     
-    const produit = [{
-        productId : setProductId,
-        productName : setProductName,
-        productStock : setProductStock,
-        productDescription : setProductDescription,
-        productPrice : setProductPrice
-    }];
-    console.log(produit);
-        // const listProduct = [];
+    // const produit = [{
+    //     productId : setProductId,
+    //     productName : setProductName,
+    //     productStock : setProductStock,
+    //     productDescription : setProductDescription,
+    //     productPrice : setProductPrice
+    // }];
+    // console.log(produit);
 
-        // const product1 = [
-        //     {productId : 1 },
-        //     {productName : setProductName},
-        //     {productStock : setProductStock},
-        //     {productDescription : setProductDescription},
-        //     {productPrice : setProductPrice}
-        // ];
-        // const product2 = [
-        //     {productId : 2 },
-        //     {productName : setProductName},
-        //     {productStock : setProductStock},
-        //     {productDescription : setProductDescription},
-        //     {productPrice : setProductPrice}
-        // ];
+    const toggleStock = async (e)=>{
+
+        await fetch('http://localhost:8000/api/product/switchStock',
+            {
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+            },
+        )
+    }
 
     let page;
 
@@ -121,14 +101,14 @@ const Administration = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{product.productName}</td>
-                            <td>{product.productStock}</td>
-                            <td>{product.productDescription}</td>
-                            <td>{product.productPrice}</td>
+                            <td>{getProduct.productName}</td>
+                            <td onClick={toggleStock}>{getProduct.productStock}</td>
+                            <td>{getProduct.productDescription}</td>
+                            <td>{getProduct.productPrice}</td>
                         </tr>
                         <tr>
                             <td>nom2</td>
-                            <td>stock2</td>
+                            <td onClick={toggleStock}>stock2 <input type="checkbox" name="checkStock" id="checkStock"/></td>
                             <td>description2</td>
                             <td>prix2</td>
                         </tr>
