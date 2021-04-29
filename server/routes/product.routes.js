@@ -17,16 +17,16 @@ const Product = require('../models/product.model');
 
 
 //? Lire un produit
-router.get('/', async (req,res)=>{
+router.get('/getProduct', async (req,res)=>{
     try{
-        const product = await Product.find(
-            req.body.productId,
-            req.body.productName,
-            req.body.productStock,
-            req.body.productDescription,
-            req.body.productPrice,
-        );
-
+        const product = await Product.find({
+            productId : req.body.productId,
+            productName : req.body.productName,
+            productStock : req.body.productStock,
+            productDescription : req.body.productDescription,
+            productPrice : req.body.productPrice,
+        });
+        
         res.send(product);
 
     }catch (error){

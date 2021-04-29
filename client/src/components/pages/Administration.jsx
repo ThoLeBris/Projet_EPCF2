@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AdminContext } from '../../AdminContext'
 
@@ -28,26 +28,38 @@ const Administration = () => {
     const {productDescription,setProductDescription} = useState("");
     const {productPrice,setProductPrice} = useState("");
     
-    const product = fetch('http://localhost:8000/api/product/',
+    const product = fetch('http://localhost:8000/api/product/getProduct',
         {
             method:'GET',
             headers: {'Content-Type':'application/json'},
-        },
-        setProductId("id"),
-        setProductName("nom"),
-        setProductStock(true),
-        setProductDescription("description"),
-        setProductPrice("prix"),
+        }
     )
+    useEffect(()=>{
+        ( 
+            async ()=> {
+                const response = await fetch('http://localhost:8000/api/product/getProduct', 
+                {
+                    headers: {'Content-Type':'application/json'},
+                    credentials:'include'
+                })
+
+                const content = await response.json();
+                
+                if(content._id){
+                    setProductName(content);
+                }
+            }
+        )()
+    }, [setProductName]);
     
-    // const produit = [{
-    //     productId : setProductId,
-    //     productName : setProductName,
-    //     productStock : setProductStock,
-    //     productDescription : setProductDescription,
-    //     productPrice : setProductPrice
-    // }];
-    console.log(product);
+    const produit = [{
+        productId : setProductId,
+        productName : setProductName,
+        productStock : setProductStock,
+        productDescription : setProductDescription,
+        productPrice : setProductPrice
+    }];
+    console.log(produit);
         // const listProduct = [];
 
         // const product1 = [
