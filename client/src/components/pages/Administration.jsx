@@ -5,16 +5,15 @@ import { AdminContext } from '../../AdminContext'
 
 const Administration = () => {
     
-    const {admin, setAdmin} = useContext(AdminContext)
+    const {admin, setAdmin} = useContext(AdminContext);
     
-    
-    const [productId,setProductI] = useState("");
     const [productName,setProductName] = useState("");
     const [productStock,setProductStock] = useState(true);
     const [productDescription,setProductDescription] = useState("");
     const [productPrice,setProductPrice] = useState("");
     const [product,setProduct] = useState([]);
-    const [setSubmit] = useState([]);
+    const [newProduct,setNewProduct] = useState([]);
+    // const [setSubmit] = useState([]);
 
     //? Fonction Log Out qui va déconnecter l'utilisateur actuel
     const logOut = async (e)=>{
@@ -28,20 +27,22 @@ const Administration = () => {
         )
         setAdmin(null);
     }
+    
     //? Créer un produit
     async function createProduct(){
         try{
-            const res = await axios.post('http://localhost:8000/api/product/createProduct');
-            console.log(res.data);
+            const newProduct = await axios.post('http://localhost:8000/api/product/createProduct');
+            console.log(newProduct.data);
+            setNewProduct(newProduct.data);
         }catch(error){
             console.error('createProduct error')
         }
     }
 
-    const handelSubmit = (e)=>{
+    const handelNewProduct = (e)=>{
         e.preventDefault();
         console.log(product);
-        setSubmit(true);
+        // setSubmit(true);
         setProduct({
             ...{productName},
             ...{productStock},
@@ -53,8 +54,8 @@ const Administration = () => {
     //? Afficher tous les produits au chargement de la page
     const getProduct = async (e)=>{
         try{
-            const res = await axios.get('http://localhost:8000/api/product/getProduct');
-            console.log(res.data);
+            const product = await axios.get('http://localhost:8000/api/product/getProduct');
+            console.log(product.data);
             setProduct()
         }catch(error){
             console.error('getProduct error')
@@ -64,17 +65,27 @@ const Administration = () => {
         getProduct()
     }, [product])
 
+    const handelLoadProduct = (e)=>{
+        e.preventDefault();
+        console.log(product);
+        setProduct({
+            ...{productName},
+            ...{productStock},
+            ...{productDescription},
+            ...{productPrice}
+        });
+    }
+
     //? Afficher UN produit
     const getOneProduct = async (e)=>{
         try{
-            const res = await axios.get('http://localhost:8000/api/product/getProduct/:id');
-            console.log(res.data);
-            setProduct()
+            const product = await axios.get('http://localhost:8000/api/product/getProduct/:id');
+            console.log(product.data);
+            setProduct(product.data)
         }catch(error){
             console.error('getProduct error')
         }
     }
-
 
     //? Switch du stock : en stock / rupture
     const toggleStock = async (e)=>{
@@ -90,7 +101,7 @@ const Administration = () => {
 
     let page;
 
-    //? Si l'utilisateur n'est pas administrateur le "if" s'affichera, autrement ce sera le "else"
+    //? Si l'utilisateur n'est pas administrateur le "if" s'affichera (demande de connexion ou retour au site), autrement ce sera le "else" (interface administrateur)
     if(!admin){
         page = (
             <>
@@ -111,12 +122,11 @@ const Administration = () => {
                     <input type="text" value={productName} placeholder="nom" onChange={(e)=>setProductName(e.target.value)}/>
                     <label htmlFor="stock">Stock</label>
                     <input type="checkbox" value={productStock} onChange={(e)=>setProductStock(e.target.value)}/>
-                    <input type="text" value={productPrice} placeholder="prix"  onChange={(e)=>setProductPrice(e.target.value)}/>
                     <input type="text" value={productDescription} placeholder="description"  onChange={(e)=>setProductDescription(e.target.value)}/>
+                    <input type="text" value={productPrice} placeholder="prix"  onChange={(e)=>setProductPrice(e.target.value)}/>
 
-                    <button type="submit" onSubmit={handelSubmit}>Créer prdt</button>
+                    <button onClick={handelNewProduct}>Créer prdt</button>
                 </form>
-
 
                 <table onLoad={getProduct}>
                     <thead>
@@ -131,6 +141,12 @@ const Administration = () => {
                     <tbody>
                         <tr>
                             <td>{productName}</td>
+                            <td onClick={toggleStock}>{productStock}</td>
+                            <td>{productDescription}</td>
+                            <td>{productPrice}</td>
+                        </tr>
+                        <tr>
+                            <td>{handelLoadProduct.productName}</td>
                             <td onClick={toggleStock}>{productStock}</td>
                             <td>{productDescription}</td>
                             <td>{productPrice}</td>
@@ -178,7 +194,6 @@ const Administration = () => {
             
             {page}
             
-
         </div>
     )
 }

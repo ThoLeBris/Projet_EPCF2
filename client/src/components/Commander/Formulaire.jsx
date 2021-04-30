@@ -43,8 +43,9 @@ const form = () => {
                 </div>
                 <div className="form-item">
                     <label htmlFor="orderPhone">Numéro de téléphone: </label>
-                    <input type="text" name="orderPhone" id="orderPhone"
+                    <input type="tel" name="orderPhone" id="orderPhone"
                         placeholder="01 02 03 04 05"
+                        minLength="10"
                         required/>
                 </div>
                 <div className="form-item">
