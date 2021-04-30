@@ -14,10 +14,8 @@ import { AdminContext } from './AdminContext';
 function App() {
     
     const [admin,setAdmin] = useState(null);
-    const [product,setProduct] = useState(null);
 
     const value = useMemo(() => ({admin,setAdmin}), [admin,setAdmin]);
-    const valueProd = useMemo(()=>({product,setProduct}), [product,setProduct]);
     
 
     useEffect(()=>{
