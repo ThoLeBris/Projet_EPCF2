@@ -93,14 +93,14 @@ const Administration = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{getProduct.productName}</td>
+                            <td>{productName}</td>
                             <td onClick={toggleStock}>{getProduct.productStock}</td>
-                            <td>{getProduct.productDescription}</td>
+                            <td>{product.productDescription}</td>
                             <td>{getProduct.productPrice}</td>
                         </tr>
                         <tr>
                             <td>nom2</td>
-                            <td>stock2 <input type="checkbox" name="checkStock" id="checkStock"/></td>
+                            <td>stock2</td>
                             <td>description2</td>
                             <td>prix2</td>
                         </tr>
