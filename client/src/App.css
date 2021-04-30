@@ -525,4 +525,22 @@ h2 {
 }
 
     /* Administration */
-
+.bar-btn{
+    display: flex;
+    justify-content: center;
+}
+.largeur-nom{
+    width: 200px;
+}
+.largeur-stock{
+    width: 100px;
+}
+.largeur-description{
+    width: 500px;
+}
+.largeur-prix{
+    width: 100px;
+}
+td{
+    text-align: center;
+}

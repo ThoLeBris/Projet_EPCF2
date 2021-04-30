@@ -7,12 +7,14 @@ const Administration = () => {
     
     const {admin, setAdmin} = useContext(AdminContext)
     
-    const [productId,setProductId] = useState("");
+    
+    const [productId,setProductI] = useState("");
     const [productName,setProductName] = useState("");
     const [productStock,setProductStock] = useState(true);
     const [productDescription,setProductDescription] = useState("");
     const [productPrice,setProductPrice] = useState("");
     const [product,setProduct] = useState([]);
+    const [setSubmit] = useState([]);
 
     //? Fonction Log Out qui va déconnecter l'utilisateur actuel
     const logOut = async (e)=>{
@@ -26,12 +28,34 @@ const Administration = () => {
         )
         setAdmin(null);
     }
-    
-    //? Afficher les produits au chargement de la page
-    async function getProduct(){
+    //? Créer un produit
+    async function createProduct(){
+        try{
+            const res = await axios.post('http://localhost:8000/api/product/createProduct');
+            console.log(res.data);
+        }catch(error){
+            console.error('createProduct error')
+        }
+    }
+
+    const handelSubmit = (e)=>{
+        e.preventDefault();
+        console.log(product);
+        setSubmit(true);
+        setProduct({
+            ...{productName},
+            ...{productStock},
+            ...{productDescription},
+            ...{productPrice}
+        });
+    }
+
+    //? Afficher tous les produits au chargement de la page
+    const getProduct = async (e)=>{
         try{
             const res = await axios.get('http://localhost:8000/api/product/getProduct');
             console.log(res.data);
+            setProduct()
         }catch(error){
             console.error('getProduct error')
         }
@@ -39,6 +63,18 @@ const Administration = () => {
     useEffect(() => {
         getProduct()
     }, [product])
+
+    //? Afficher UN produit
+    const getOneProduct = async (e)=>{
+        try{
+            const res = await axios.get('http://localhost:8000/api/product/getProduct/:id');
+            console.log(res.data);
+            setProduct()
+        }catch(error){
+            console.error('getProduct error')
+        }
+    }
+
 
     //? Switch du stock : en stock / rupture
     const toggleStock = async (e)=>{
@@ -49,6 +85,7 @@ const Administration = () => {
                 headers: {'Content-Type':'application/json'},
             },
         )
+        setProductStock()
     }
 
     let page;
@@ -64,58 +101,64 @@ const Administration = () => {
     }else{
         page = (
             <div>
-                <div>
+                <div className="bar-btn">
                     <Link to="/" className="btn-connect">Retourner sur le site</Link>
                     <Link to="/register" className="btn-connect">Créer un nouvel administrateur</Link>
                     <Link to="/administration" onClick={logOut} className="disconnect">Se déconnecter</Link>
                 </div>
-                
-                {/* {
-                    products.map(({product}) => {
-                        return(
-                            <>
-                                <div>{product.productName}</div>
-                                <div>{product.productStock}</div>
-                                <div>{product.productDescription}</div>
-                                <div>{product.productPrice}</div>
-                            </>
-                        )
-                    })
-                } */}
+
+                <form method="POST" onSubmit={createProduct}>
+                    <input type="text" value={productName} placeholder="nom" onChange={(e)=>setProductName(e.target.value)}/>
+                    <label htmlFor="stock">Stock</label>
+                    <input type="checkbox" value={productStock} onChange={(e)=>setProductStock(e.target.value)}/>
+                    <input type="text" value={productPrice} placeholder="prix"  onChange={(e)=>setProductPrice(e.target.value)}/>
+                    <input type="text" value={productDescription} placeholder="description"  onChange={(e)=>setProductDescription(e.target.value)}/>
+
+                    <button type="submit" onSubmit={handelSubmit}>Créer prdt</button>
+                </form>
 
 
                 <table onLoad={getProduct}>
                     <thead>
                         <tr>
-                            <th>Nom</th>
-                            <th>Stock</th>
-                            <th>Description</th>
-                            <th>Prix</th>
+                            <th className="largeur-nom">Nom</th>
+                            <th className="largeur-stock">Stock</th>
+                            <th className="largeur-description">Description</th>
+                            <th className="largeur-prix">Prix</th>
                         </tr>
                         
                     </thead>
                     <tbody>
                         <tr>
                             <td>{productName}</td>
-                            <td onClick={toggleStock}>{getProduct.productStock}</td>
-                            <td>{product.productDescription}</td>
-                            <td>{getProduct.productPrice}</td>
+                            <td onClick={toggleStock}>{productStock}</td>
+                            <td>{productDescription}</td>
+                            <td>{productPrice}</td>
                         </tr>
                         <tr>
-                            <td>nom2</td>
-                            <td>stock2</td>
+                            <td onClick={getOneProduct} value={1} >nom2</td>
+                            <td>
+                                <input type="checkbox" name="checkStock" id="checkStock"
+                                    value={productStock} onChange={toggleStock}/>{productStock ? "En Stock" : "Rupture"}
+                            </td>
                             <td>description2</td>
                             <td>prix2</td>
                         </tr>
                         <tr>
                             <td>nom3</td>
-                            <td>stock3</td>
+                            <td>
+                                <input type="checkbox" name="checkStock" id="checkStock"
+                                    value={productStock} onChange={toggleStock}/>{productStock ? "En Stock" : "Rupture"}
+                            </td>
                             <td>description3</td>
                             <td>prix3</td>
                         </tr>
                         <tr>
                             <td>nom4</td>
-                            <td>stock4</td>
+                            <td>
+                                <input type="checkbox" name="checkStock" id="checkStock"
+                                    value={productStock} onChange={toggleStock}/>{productStock ? "En Stock" : "Rupture"}
+                            </td>
                             <td>description4</td>
                             <td>prix4</td>
                         </tr>

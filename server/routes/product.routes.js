@@ -3,53 +3,44 @@ const router = require('express').Router();
 const Product = require('../models/product.model');
 
 //? Créer un produit
-// router.post('/createProduct', async (req,res)=>{
-//     const product = new Product({
-//         productName: req.body.productName,
-//         productStock: req.body.productStock,
-//         productDescription: req.body.productDescription,
-//         productPrice: req.body.productPrice,
-//     })
+router.post('/createProduct', async (req,res)=>{
 
-//     const result = await product.save();
-    
-// })
+    const product = new Product({...req.body});
+    product.save()
+        .then(()=> res.status(201).json({message: "Produit enregistré"}))
+        .catch(error => res.status(401).json({ error }));
+})
 
-
-//? Lire un produit
+//? Lire TOUT les produits
 router.get('/getProduct', async (req,res)=>{
-    try{
-        const product = await Product.find({
-            productId : req.body.productId,
-            productName : req.body.productName,
-            productStock : req.body.productStock,
-            productDescription : req.body.productDescription,
-            productPrice : req.body.productPrice,
-        });
-        
-        res.send(product);
+    
+    Product.find()
+    .then(products => res.status(200).json(products))
+    .catch(error => res.status(401).json({ error }));
+})
 
-    }catch (error){
-        return res.status(401).send({
-            message: 'Product not found'
-        })
-    }
+//? Lire UN produit
+router.get('/getProduct/:id', async (req,res)=>{
+    Product.findOne({ _id: req.params.id })
+    .then(product => res.status(200).json(product))
+    .catch(error => res.status(404).json({ error }));
 })
 
 //? Modifier un produit
 //? Swith Stock [En Stock / Rupture]
 router.post('/toggleStock', async (req,res)=>{
     try{
-        const productStock = await Product.find({productStock : req.body.productStock});
-        if(productStock == true){
-            productStock = false;
+        const product = await Product.find({productId : req.body.productId});
+        if(this.product.productStock == true){
+            this.product.productStock = false;
         }else{
-            productStock = true;
+            this.product.productStock = true;
         }
-        res.send(productStock);
+        product.save();
+        res.send('ToggleStock OK');
     }catch (error){
         return res.status(401).send({
-            message: 'Product Stock not found'
+            message: 'ToggleStock not OK'
         })
     }
 })
