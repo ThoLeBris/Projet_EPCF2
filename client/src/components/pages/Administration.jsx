@@ -1,19 +1,18 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { AdminContext } from '../../AdminContext'
-import { ProductContext } from '../../ProductContext'
 
 const Administration = () => {
     
     const {admin, setAdmin} = useContext(AdminContext)
-
-    const {product, setProduct} = useContext(ProductContext)
     
-    const {productId,setProductId} = useState("");
-    const {productName,setProductName} = useState("");
-    const {productStock,setProductStock} = useState(true);
-    const {productDescription,setProductDescription} = useState("");
-    const {productPrice,setProductPrice} = useState("");
+    const [productId,setProductId] = useState("");
+    const [productName,setProductName] = useState("");
+    const [productStock,setProductStock] = useState(true);
+    const [productDescription,setProductDescription] = useState("");
+    const [productPrice,setProductPrice] = useState("");
+    const [product,setProduct] = useState([]);
 
     //? Fonction Log Out qui va déconnecter l'utilisateur actuel
     const logOut = async (e)=>{
@@ -28,28 +27,21 @@ const Administration = () => {
         setAdmin(null);
     }
     
-    
-    
-    const getProduct = fetch('http://localhost:8000/api/product/getProduct',
-        {
-            method:'GET',
-            headers: {'Content-Type':'application/json'},
-        },
-        setProduct()
-    )
-    
-    // const produit = [{
-    //     productId : setProductId,
-    //     productName : setProductName,
-    //     productStock : setProductStock,
-    //     productDescription : setProductDescription,
-    //     productPrice : setProductPrice
-    // }];
-    // console.log(produit);
+    async function getProduct(){
+        try{
+            const res = await axios.get('http://localhost:8000/api/product/getProduct');
+            console.log(res.data);
+        }catch(error){
+            console.error('getProduct error')
+        }
+    }
+    useEffect(() => {
+        getProduct()
+    }, [product])
 
     const toggleStock = async (e)=>{
 
-        await fetch('http://localhost:8000/api/product/switchStock',
+        await fetch('http://localhost:8000/api/product/toggleStock',
             {
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
@@ -89,7 +81,7 @@ const Administration = () => {
                 } */}
 
 
-                <table>
+                <table onLoad={getProduct}>
                     <thead>
                         <tr>
                             <th>Nom</th>
@@ -108,7 +100,7 @@ const Administration = () => {
                         </tr>
                         <tr>
                             <td>nom2</td>
-                            <td onClick={toggleStock}>stock2 <input type="checkbox" name="checkStock" id="checkStock"/></td>
+                            <td>stock2 <input type="checkbox" name="checkStock" id="checkStock"/></td>
                             <td>description2</td>
                             <td>prix2</td>
                         </tr>
