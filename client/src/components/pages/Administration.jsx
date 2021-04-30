@@ -27,6 +27,7 @@ const Administration = () => {
         setAdmin(null);
     }
     
+    //? Afficher les produits au chargement de la page
     async function getProduct(){
         try{
             const res = await axios.get('http://localhost:8000/api/product/getProduct');
@@ -39,6 +40,7 @@ const Administration = () => {
         getProduct()
     }, [product])
 
+    //? Switch du stock : en stock / rupture
     const toggleStock = async (e)=>{
 
         await fetch('http://localhost:8000/api/product/toggleStock',
@@ -51,6 +53,7 @@ const Administration = () => {
 
     let page;
 
+    //? Si l'utilisateur n'est pas administrateur le "if" s'affichera, autrement ce sera le "else"
     if(!admin){
         page = (
             <>
