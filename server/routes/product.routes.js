@@ -35,9 +35,10 @@ router.get('/getProduct', async (req,res)=>{
         })
     }
 })
+
 //? Modifier un produit
 //? Swith Stock [En Stock / Rupture]
-router.post('/switchStock', async (req,res)=>{
+router.post('/toggleStock', async (req,res)=>{
     try{
         const productStock = await Product.find({productStock : req.body.productStock});
         if(productStock == true){
