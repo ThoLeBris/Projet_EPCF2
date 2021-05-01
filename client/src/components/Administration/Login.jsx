@@ -10,19 +10,16 @@ const Login = ()=> {
     const [password,setPassword] = useState("");
     const [redirect,setRedirect] = useState(false);
     
-    // TODO
-    //! Enlève l'erreur: Can't perform a React state update on an unmounted component.This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
-        const [didMount, setDidMount] = useState(false); 
+    const [didMount, setDidMount] = useState(false); 
 
-        useEffect(() => {
-            setDidMount(true);
-            return () => setDidMount(false);
-        }, [])
+    useEffect(() => {
+        setDidMount(true);
+        return () => setDidMount(false);
+    }, [])
 
-        if(!didMount) {
-            return null;
-        }
-    //? jusqu'ici.
+    if(!didMount) {
+        return null;
+    }
 
     const submit = async (e)=>{
         e.preventDefault();
@@ -52,8 +49,6 @@ const Login = ()=> {
         }
         setRedirect(true);
     }
-
-    
 
     if(admin && redirect){
         return <Redirect to='/administration'/>;

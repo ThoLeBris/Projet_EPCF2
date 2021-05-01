@@ -5,18 +5,15 @@ import Home from './components/pages/Home';
 import Login from './components/Administration/Login';
 import Administration from './components/pages/Administration';
 import Register from './components/Administration/Register';
+import EditProduct from './components/Administration/editProduct'
 import { useMemo, useState, useEffect } from 'react'
 import { AdminContext } from './AdminContext';
-
-
-
 
 function App() {
     
     const [admin,setAdmin] = useState(null);
 
     const value = useMemo(() => ({admin,setAdmin}), [admin,setAdmin]);
-    
 
     useEffect(()=>{
         ( 
@@ -45,6 +42,7 @@ function App() {
                         <Route path="/login" component={Login}/>
                         <Route path="/register" component={Register}/>
                         <Route path="/administration" component={Administration}/>
+                        <Route path="/edit/:id" component={EditProduct}/>
                     </Switch>
                 </AdminContext.Provider>
             </BrowserRouter>
