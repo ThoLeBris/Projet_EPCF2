@@ -36,7 +36,7 @@
     background: url(assets/images/wineyard.jpg) no-repeat bottom;
 }
 .nav{
-    width: 100vw;
+    width: 99vw;
     font-family: Roboto-Bold, 'Courier New', Courier, monospace;
     display: flex;
     justify-content: space-around;
@@ -74,7 +74,7 @@
 }
 .title-bloc{
     height: 60vh;
-    width: 100vw;
+    width: 99vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,9 +180,9 @@ a{
     color: white;
     
     z-index: +1;
-    width: 50px;
+    width: 100px;
     position: absolute;
-    right: 25px;
+    right: 5px;
     top: -5px;
 }
 .photo-produit{
