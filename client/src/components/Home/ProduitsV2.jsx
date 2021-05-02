@@ -1,4 +1,6 @@
-import React from 'react'
+import axios from 'axios'
+
+import React, { Component } from 'react'
 import rouge10L from '../../assets/images/rouge10L.jpg'
 import rouge5L from '../../assets/images/rouge5L.jpg'
 import triangleRouge from '../../assets/images/triangle-rouge.png'
@@ -7,24 +9,94 @@ import triangleClairet from '../../assets/images/triangle-clairet.png'
 import methodeRose from '../../assets/images/COMTE DANDIRAN-1.png'
 import triangleMethodeRose from '../../assets/images/triangle-methode-rose.png'
 
-const Produits = () => {
-    return (
-        <div id="products">
+
+
+export default class ProduitsV2 extends Component {
+
+    constructor(props){
+        super(props);
+
+        this.Produit1 = this.Produit1.bind(this);
+        // this.Produit2 = this.Produit2.bind(this);
+        // this.Produit3 = this.Produit3.bind(this);
+        // this.Produit4 = this.Produit4.bind(this);
+
+        this.state = {
+            productName: '',
+            productStock: '',
+            productDescription: '',
+            productPrice: ''
+        }
+    }
+    
+    Produit1(){
+        axios.get('http://localhost:8000/api/product/getProduct/6086bc91b9530b0c85263211')
+        .then(response =>
+            this.setState1({
+                productName: response.data.productName,
+                productStock: response.data.productStock,
+                productDescription: response.data.productDescription,
+                productPrice: response.data.productPrice,
+            })
+        )
+        .catch(error => console.error({ error }))
+    }
+    // Produit2(){
+    //     axios.get('http://localhost:8000/api/product/getProduct/6086bd86b9530b0c85263212')
+    //     .then(response =>
+    //         this.setState({
+    //             productName: response.data.productName,
+    //             productStock: response.data.productStock,
+    //             productDescription: response.data.productDescription,
+    //             productPrice: response.data.productPrice,
+    //         })
+    //     )
+    //     .catch(error => console.error({ error }))
+    // }
+    // Produit3(){
+    //     axios.get('http://localhost:8000/api/product/getProduct/6086be6bb9530b0c85263213')
+    //     .then(response =>
+    //         this.setState({
+    //             productName: response.data.productName,
+    //             productStock: response.data.productStock,
+    //             productDescription: response.data.productDescription,
+    //             productPrice: response.data.productPrice,
+    //         })
+    //     )
+    //     .catch(error => console.error({ error }))
+    // }
+    // Produit4(){
+    //     axios.get('http://localhost:8000/api/product/getProduct/6086be91b9530b0c85263214')
+    //     .then(response =>
+    //         this.setState({
+    //             productName: response.data.productName,
+    //             productStock: response.data.productStock,
+    //             productDescription: response.data.productDescription,
+    //             productPrice: response.data.productPrice,
+    //         })
+    //     )
+    //     .catch(error => console.error({ error }))
+    // }
+
+    render() {
+        return (
+            <div id="products">
             <div className="largeur">
                 <h2>Nos Produits</h2>
                 <h3>Vins tranquilles</h3>
                 <div className="top-line">
+
                     <div className="demi-produit">
                         <div className="top-card">
                             <img src={rouge10L} alt="Vin rouge 10L" className="photo-produit"/>
                             <div>
-                                <p className="stock">En Stock</p>
+                                <p className="stock">{this.state.productStock}</p>
                                 <img src={triangleRouge} alt="triangle-rouge" className="triangle"/>
                             </div>
                         </div>
                         <div className="product-title">
                             <div>
-                                <h4>Cubi de vin Rouge</h4>
+                                <h4>{this.state.productName}</h4>
                                 <div>10 Litres</div>
                             </div>
                         </div>
@@ -41,7 +113,6 @@ const Produits = () => {
                             <div>
                                 <p className="stock">En Stock</p>
                                 <img src={triangleRouge} alt="triangle-rouge" className="triangle"/>
-                                {/* stock ? "En Stock" : "Rupture" */}
                             </div>
                         </div>
                         <div className="product-title">
@@ -65,10 +136,8 @@ const Produits = () => {
                         <div>
                             <p className="stock">En Stock</p>
                             <img src={triangleClairet} alt="triangle-clairet" className="triangle"/>
-                            {/* stock ? "En Stock" : "Rupture" */}
                         </div>
                     </div>
-                    
                     <div className="full-product-title">
                         <div>
                             <h4>Cubi de vin Clairet</h4>
@@ -91,7 +160,6 @@ const Produits = () => {
                         <div>
                             <p className="stock">En Stock</p>
                             <img src={triangleMethodeRose} alt="triangle-clairet" className="triangle"/>
-                            {/* stock ? "En Stock" : "Rupture" */}
                         </div>
                     </div>
                     
@@ -127,7 +195,6 @@ const Produits = () => {
                 </div>
             </div>
         </div>
-    )
+        )
+    }
 }
-
-export default Produits
