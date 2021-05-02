@@ -58,7 +58,7 @@ export default class OrderList extends Component {
                 <h3>Liste des Clients</h3>
                 
                 <div className="center-column">
-                    <table>
+                    <table className="margin-bottom">
                         <thead>
                             <tr>
                                 <th>Nom</th>

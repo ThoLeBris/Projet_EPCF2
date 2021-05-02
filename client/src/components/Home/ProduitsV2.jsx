@@ -16,43 +16,61 @@ export default class ProduitsV2 extends Component {
     constructor(props){
         super(props);
 
-        this.Produit1 = this.Produit1.bind(this);
+        // this.Produit1 = this.Produit1.bind(this);
         // this.Produit2 = this.Produit2.bind(this);
         // this.Produit3 = this.Produit3.bind(this);
         // this.Produit4 = this.Produit4.bind(this);
+        // this.Produit1.productName = this.data.productName.bind(this);
+        // this.Produit1.productStock = this.data.productStock.bind(this);
+        // this.Produit1.productDescription = this.data.productDescription.bind(this);
+        // this.Produit1.productPrice = this.data.productPrice.bind(this);
 
         this.state = {
-            productName: '',
-            productStock: '',
-            productDescription: '',
-            productPrice: ''
-        }
+            product1:[],
+            
+            productName1: '',
+            productStock1: '',
+            productDescription1: '',
+            productPrice1: '',
+            
+            productName2: '',
+            productStock2: '',
+            productDescription2: '',
+            productPrice2: '',
+            }
+        this.productName = this.props.productName;
+        this.productStock = this.props.productStock;
+        this.productDescription = this.props.productDescription;
+        this.productPrice = this.props.productPrice;
+        
     }
     
-    Produit1(){
-        axios.get('http://localhost:8000/api/product/getProduct/6086bc91b9530b0c85263211')
-        .then(response =>
-            this.setState1({
-                productName: response.data.productName,
-                productStock: response.data.productStock,
-                productDescription: response.data.productDescription,
-                productPrice: response.data.productPrice,
-            })
-        )
-        .catch(error => console.error({ error }))
+    componentDidMount(){
+
+            axios.get('http://localhost:8000/api/product/getProduct/6086bc91b9530b0c85263211')
+            .then(response =>
+                this.setState({
+                    productName1: response.data.productName,
+                    productStock1: response.data.productStock,
+                    productDescription1: response.data.productDescription,
+                    productPrice1: response.data.productPrice,
+                })
+            )
+            .catch(error => console.error({ error }));
+            
+            axios.get('http://localhost:8000/api/product/getProduct/6086bd86b9530b0c85263212')
+            .then(response =>
+                this.setState({
+                    productName2: response.data.productName,
+                    productStock2: response.data.productStock,
+                    productDescription2: response.data.productDescription,
+                    productPrice2: response.data.productPrice,
+                })
+            )
+            .catch(error => console.error({ error }));
+            
     }
-    // Produit2(){
-    //     axios.get('http://localhost:8000/api/product/getProduct/6086bd86b9530b0c85263212')
-    //     .then(response =>
-    //         this.setState({
-    //             productName: response.data.productName,
-    //             productStock: response.data.productStock,
-    //             productDescription: response.data.productDescription,
-    //             productPrice: response.data.productPrice,
-    //         })
-    //     )
-    //     .catch(error => console.error({ error }))
-    // }
+    
     // Produit3(){
     //     axios.get('http://localhost:8000/api/product/getProduct/6086be6bb9530b0c85263213')
     //     .then(response =>
@@ -78,7 +96,10 @@ export default class ProduitsV2 extends Component {
     //     .catch(error => console.error({ error }))
     // }
 
+    
     render() {
+        // const Produit1 = this.props.product;
+        // const = ;
         return (
             <div id="products">
             <div className="largeur">
@@ -90,13 +111,13 @@ export default class ProduitsV2 extends Component {
                         <div className="top-card">
                             <img src={rouge10L} alt="Vin rouge 10L" className="photo-produit"/>
                             <div>
-                                <p className="stock">{this.state.productStock}</p>
+                                <p className="stock">{this.state.productStock1}</p>
                                 <img src={triangleRouge} alt="triangle-rouge" className="triangle"/>
                             </div>
                         </div>
                         <div className="product-title">
                             <div>
-                                <h4>{this.state.productName}</h4>
+                                <h4>{this.state.productName1}</h4>
                                 <div>10 Litres</div>
                             </div>
                         </div>
@@ -117,7 +138,7 @@ export default class ProduitsV2 extends Component {
                         </div>
                         <div className="product-title">
                             <div>
-                                <h4>Cubi de vin Rouge</h4>
+                                <h4>{this.state.productName2}</h4>
                                 <div>5 Litres</div>
                             </div>
                         </div>

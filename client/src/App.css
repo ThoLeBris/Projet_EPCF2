@@ -560,6 +560,9 @@ input,Link{
 .margin-10{
     margin: 10px;
 }
+.margin-bottom{
+    margin-bottom: 50px;
+}
 .font-size-40{
     font-size: 40px;
 }
