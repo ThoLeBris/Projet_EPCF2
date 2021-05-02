@@ -5,7 +5,8 @@ import Home from './components/pages/Home';
 import Login from './components/Administration/Login';
 import Administration from './components/pages/Administration';
 import Register from './components/Administration/Register';
-import EditProduct from './components/Administration/editProduct'
+import EditProduct from './components/Administration/Product/editProduct'
+import EditOrder from './components/Administration/Order/editOrder'
 import { useMemo, useState, useEffect } from 'react'
 import { AdminContext } from './AdminContext';
 
@@ -42,7 +43,8 @@ function App() {
                         <Route path="/login" component={Login}/>
                         <Route path="/register" component={Register}/>
                         <Route path="/administration" component={Administration}/>
-                        <Route path="/edit/:id" component={EditProduct}/>
+                        <Route path="/editProduct/:id" component={EditProduct}/>
+                        <Route path="/editOrder/:id" component={EditOrder}/>
                     </Switch>
                 </AdminContext.Provider>
             </BrowserRouter>

@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AdminContext } from '../../AdminContext'
 
-import ProductList from '../Administration/productList'
-import CreateProduct from '../Administration/createProduct'
+import ProductList from '../Administration/Product/productList'
+import CreateProduct from '../Administration/Product/createProduct'
+import OrderList from '../Administration/Order/orderList'
 
 const Administration = () => {
     
@@ -42,20 +43,17 @@ const Administration = () => {
                 </div>
 
                 <ProductList/>
-
                 <CreateProduct/>
 
-                <div className="line-container"><div className="line"></div></div>
+                <OrderList/>
 
-                <h2>Les Commandes / Clients</h2>
-                
             </div>
         )
     }
 
     return (
         <div id="administration" className="flex-center">
-            <h1>Administration</h1>
+            <h2 className="font-size-40">Administration</h2>
             <div>
                 {admin ? `Bonjour ${admin.adminName}` : `Si vous êtes administrateur, connectez-vous pour avoir accès à l'interface.`}
             </div>

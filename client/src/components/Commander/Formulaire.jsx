@@ -109,7 +109,9 @@ export default class Formulaire extends Component {
                     </div>
                     <div className="form-item">
                         <label htmlFor="orderPhone">Numéro de téléphone: </label>
-                        <input  type="tel" name="orderPhone" id="orderPhone"
+                        <input  type="tel"
+                                name="orderPhone"
+                                id="orderPhone"
                                 placeholder="01 02 03 04 05"
                                 minLength="10"
                                 required
@@ -119,14 +121,15 @@ export default class Formulaire extends Component {
                     </div>
                     <div className="form-item">
                         <label htmlFor="orderAddress">Adresse complète: </label>
-                        <input  type="text"
-                                name="orderAddress"
-                                id="orderAddress"
-                                placeholder="1, rue Jean Dupont 33000 BORDEAUX"
-                                value={this.state.orderAddress}
-                                onChange={this.onChangeOrderAddress}
-                                required
-                        />
+                        <textarea   name="orderAddress"
+                                    id="orderAddress"
+                                    className="long-text size"
+                                    placeholder="1, rue Jean Dupont 33000 BORDEAUX"
+                                    value={this.state.orderAddress}
+                                    onChange={this.onChangeOrderAddress}
+                                    rows="3"
+                                    required
+                        ></textarea>
                     </div>
                     
                     <div className="line-container"><div className="line"></div></div>

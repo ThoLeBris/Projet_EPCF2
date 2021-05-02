@@ -544,7 +544,7 @@ input,Link{
     text-align: center;
     padding: 5px 10px;
 }
-.productDescription{
+.long-text{
     resize: none;
     overflow: auto;
 }
@@ -556,4 +556,19 @@ input,Link{
 }
 .input-width{
     width: 400px;
+}
+.margin-10{
+    margin: 10px;
+}
+.font-size-40{
+    font-size: 40px;
+}
+.center-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.size{
+    width: 200px;
 }

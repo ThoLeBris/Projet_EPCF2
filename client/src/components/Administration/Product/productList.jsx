@@ -9,7 +9,7 @@ const ProductItem = props =>(
         <td>{props.product.productDescription}</td>
         <td>{props.product.productPrice}</td>
         <td>
-            <Link to={"/edit/"+props.product._id}>Modifier</Link>
+            <Link to={"/editProduct/"+props.product._id}>Modifier</Link>
         </td>
     </tr>
 )
@@ -46,12 +46,12 @@ export default class ProductList extends Component {
             <div>
                 <div className="line-container"><div className="line"></div></div>
                 
-                <h2>Les Produits</h2>
-                
+                <h2 className="margin-10">Les Produits</h2>
+
                 <div className="line-container"><div className="line"></div></div>
 
                 <h3>Liste des Produits</h3>
-                <table className="table product-table">
+                <table>
                     <thead>
                         <tr>
                             <th>Nom</th>

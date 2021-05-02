@@ -92,7 +92,7 @@ export default class EditProduct extends Component {
                     <div className="center">
                         <label>Nom: </label>
                         <input  type="text"
-                        className="input-width"
+                                className="input-width"
                                 value={this.state.productName}    
                                 onChange={this.onChangeProductName}
                         />
@@ -120,7 +120,7 @@ export default class EditProduct extends Component {
                         <label>Description: </label>
                         <textarea   name="productDescription"
                                     id="productDescription"
-                                    className="productDescription input-width"
+                                    className="long-text input-width"
                                     value={this.state.productDescription}
                                     onChange={this.onChangeProductDescription}
                                     cols="50"
@@ -139,16 +139,11 @@ export default class EditProduct extends Component {
                     </div>
                     <div className="flex-center">
                         <button type="submit" className="btn margin">Modifier le Produit</button>
-                    </div>
-                    
-                    <div className="flex-center">
+                       
                         <button onClick={this.onClick} className="disconnect">Supprimer le Produit</button>
-                    </div>
-
-                    <div className="flex-center">
+                        
                         <Link to="/administration" className="btn margin">Retourner à l'administration</Link>
                     </div>
-
                 </form>
             </div>
         )

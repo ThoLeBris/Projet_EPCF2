@@ -71,7 +71,7 @@ export default class CreateProduct extends Component {
             <div className="flex-center">
                 <div className="line-container"><div className="line"></div></div>
 
-                <h3>Créer un Product</h3>
+                <h3>Créer un Produit</h3>
 
                 <form onSubmit={this.onSubmit}>
                     <div className="center">
@@ -106,11 +106,11 @@ export default class CreateProduct extends Component {
                         <label>Description: </label>
                         <textarea   name="productDescription"
                                     id="productDescription"
-                                    className="productDescription input-width"
+                                    className="long-text input-width"
                                     value={this.state.productDescription}
                                     onChange={this.onChangeProductDescription}
-                                    cols="50"
-                                    rows="5"
+                                    rows="3"
+                                    required
                         >
                         </textarea>
                     </div>
