@@ -478,7 +478,7 @@ h2 {
     justify-content: center;
     align-items: center;
 }
-.login-form input,Link{
+input,Link{
     margin: 10px 0px;
     
     border: 1px solid black;
@@ -497,6 +497,17 @@ h2 {
     cursor: pointer;
     text-decoration: none;
     margin: 10px 5px;
+}
+.btn{
+    display: inline-block;
+    background-color: rgb(26, 90, 255);
+    border: none;
+    color: white;
+    font-size: medium;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
 }
 .disconnect{
     background-color: #9A0000;
@@ -529,18 +540,17 @@ h2 {
     display: flex;
     justify-content: center;
 }
-.largeur-nom{
-    width: 200px;
-}
-.largeur-stock{
-    width: 100px;
-}
-.largeur-description{
-    width: 500px;
-}
-.largeur-prix{
-    width: 100px;
-}
-td{
+#administration td{
     text-align: center;
+    padding: 5px 10px;
+}
+#productDescription{
+    resize: none;
+    overflow: auto;
+}
+.center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

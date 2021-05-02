@@ -13,7 +13,6 @@ const ProductItem = props =>(
         </td>
     </tr>
 )
-
 export default class ProductList extends Component {
 
     constructor(props) {
@@ -23,9 +22,10 @@ export default class ProductList extends Component {
     }
 
     componentDidMount(){
+
         axios.get('http://localhost:8000/api/product/getProduct')
             .then(response =>
-                this.setState({products: response.data}))
+                    this.setState({products: response.data}))
             .catch(error => console.error({ error }))
     }
     componentDidUpdate(){
@@ -44,14 +44,16 @@ export default class ProductList extends Component {
     render() {
         return (
             <div>
-                <h3>Prdts Liste</h3>
-                <table className="table product-table" style={{ marginTop: 20}}>
+                <div className="line-container"><div className="line"></div></div>
+
+                <h3>Liste des Produits</h3>
+                <table className="table product-table">
                     <thead>
                         <tr>
                             <th>Nom</th>
                             <th>Stock</th>
                             <th>Description</th>
-                            <th>Price</th>
+                            <th>Prix</th>
                         </tr>
                     </thead>
                     <tbody>

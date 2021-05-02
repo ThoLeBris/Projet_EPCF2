@@ -45,7 +45,7 @@ const Register = () => {
                 <form onSubmit={submit} className=" flex-center">
                     <h2>Enregistrer un nouvel administrateur</h2>
 
-                    <input type="text" className="input-field" id="username-input" placeholder="Nom d'utilisateur"
+                    <input type="text" id="username-input" placeholder="Nom d'utilisateur"
                         required
                         value={adminName}
                         onChange={e=> setAdminName(e.target.value)}
@@ -75,7 +75,7 @@ const Register = () => {
                         </ul>
                     </div>
                     <div className="flex-center">
-                        <button className="btn-connect margin" type="submit">S'enregistrer</button>
+                        <button className="btn-connect margin" type="submit">Créer un Administrateur</button>
                     </div>
                 </form>
                 <Link to="/administration" className="btn-connect">Retourner à l'administration</Link>

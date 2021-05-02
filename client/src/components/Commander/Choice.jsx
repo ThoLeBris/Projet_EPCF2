@@ -24,7 +24,7 @@ const choice = () => {
                 <div>
                     <label htmlFor="orderProductQuantity">Quantité: </label>
                     <input type="number" name="orderProductQuantity" id="orderProductQuantity"
-                        className="input-field number"
+                        className="number"
                         required
                         min="1"
                         onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()} />
@@ -50,7 +50,7 @@ const choice = () => {
                 <div>
                     <label htmlFor="orderProductQuantity2">Quantité: </label>
                     <input type="number" name="orderProductQuantity2" id="orderProductQuantity2"
-                        className="input-field number"
+                        className="number"
                         min="1"
                         onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                 </div>
@@ -75,7 +75,7 @@ const choice = () => {
                 <div>
                     <label htmlFor="orderProductQuantity3">Quantité: </label>
                     <input type="number" name="orderProductQuantity3" id="orderProductQuantity3"
-                        className="input-field number"
+                        className="number"
                         min="1"
                         onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                 </div>
@@ -100,7 +100,7 @@ const choice = () => {
                 <div>
                     <label htmlFor="orderProductQuantity4">Quantité: </label>
                     <input type="number" name="orderProductQuantity4" id="orderProductQuantity4"
-                        className="input-field number"
+                        className="number"
                         min="1"
                         onKeyDown={(evt) => ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()} />
                 </div>

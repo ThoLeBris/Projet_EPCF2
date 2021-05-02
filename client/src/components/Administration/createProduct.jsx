@@ -68,11 +68,13 @@ export default class CreateProduct extends Component {
     
     render(){
         return(
-            <div style={{marginTop: 20}}>
-                <h3>Create New Product</h3>
+            <div className="flex-center">
+                <div className="line-container"><div className="line"></div></div>
+
+                <h3>Créer un Product</h3>
 
                 <form onSubmit={this.onSubmit}>
-                    <div>
+                    <div className="center">
                         <label>Nom: </label>
                         <input  type="text"
                                 value={this.state.productName}
@@ -80,7 +82,7 @@ export default class CreateProduct extends Component {
                                 required
                         />
                     </div>
-                    <div>
+                    <div className="center">
                         <label>En Stock: </label>
                         <input  type="radio"
                                 name="stock"
@@ -99,7 +101,7 @@ export default class CreateProduct extends Component {
                                 onChange={this.onChangeProductStock}
                         />
                     </div>
-                    <div>
+                    <div className="center">
                         <label>Description: </label>
                         <input  type="text"
                                 value={this.state.productDescription}
@@ -107,7 +109,7 @@ export default class CreateProduct extends Component {
                                 required
                         />
                     </div>
-                    <div>
+                    <div className="center">
                         <label>Prix: </label>
                         <input  type="text"
                                 value={this.state.productPrice}
@@ -115,8 +117,8 @@ export default class CreateProduct extends Component {
                                 required
                         />
                     </div>
-                    <div>
-                        <input type="submit" value="Créer un Produit"/>
+                    <div className="flex-center">
+                        <button type="submit" className="btn-connect">Créer un Produit</button>
                     </div>
                 </form>
             </div>

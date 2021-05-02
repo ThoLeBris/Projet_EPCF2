@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 export default class EditProduct extends Component {
     
@@ -84,18 +85,18 @@ export default class EditProduct extends Component {
     
     render() {
         return (
-            <div>
+            <div className="flex-center">
                 <h3>Modifier un produit</h3>
 
                 <form onSubmit={this.onSubmit}>
-                    <div>
+                    <div className="center">
                         <label>Nom: </label>
                         <input  type="text"
                                 value={this.state.productName}    
                                 onChange={this.onChangeProductName}
                         />
                     </div>
-                    <div>
+                    <div className="center">
                         <label>En Stock: </label>
                         <input  type="radio"
                                 name="stock"
@@ -114,15 +115,19 @@ export default class EditProduct extends Component {
                                 onChange={this.onChangeProductStock}
                         />
                     </div>
-                    <div>
+                    <div className="center">
                         <label>Description: </label>
-                        <input  type="text"
-                                value={this.state.productDescription}
-                                onChange={this.onChangeProductDescription}
-                                required
-                                />
+                        <textarea   name="productDescription"
+                                    id="productDescription"
+                                    value={this.state.productDescription}
+                                    onChange={this.onChangeProductDescription}
+                                    cols="50"
+                                    rows="5"
+                        >
+
+                        </textarea>
                     </div>
-                    <div>
+                    <div className="center">
                         <label>Prix: </label>
                         <input  type="text"
                                 value={this.state.productPrice}
@@ -130,12 +135,16 @@ export default class EditProduct extends Component {
                                 required
                                 />
                     </div>
-                    <div>
-                        <input type="submit" value="Modifier le Produit"/>
+                    <div className="flex-center">
+                        <button type="submit" className="btn margin">Modifier le Produit</button>
                     </div>
                     
-                    <div>
-                        <button onClick={this.onClick}>Supprimer ce Produit</button>
+                    <div className="flex-center">
+                        <button onClick={this.onClick} className="disconnect">Supprimer le Produit</button>
+                    </div>
+
+                    <div className="flex-center">
+                        <Link to="/administration" className="btn margin">Retourner à l'administration</Link>
                     </div>
 
                 </form>

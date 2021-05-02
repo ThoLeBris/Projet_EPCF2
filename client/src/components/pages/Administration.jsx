@@ -21,7 +21,7 @@ const Administration = () => {
         )
         setAdmin(null);
     }
-
+      
     let page;
 
     //? Si l'utilisateur n'est pas administrateur le "if" s'affichera (demande de connexion ou retour au site), autrement ce sera le "else" (interface administrateur)
