@@ -24,7 +24,7 @@
         top: 0px;
         left: 0px;
     }
-    .product-title h4,div{
+    .product-title h4{
         margin-bottom: 10px;
     }
     .full-product-title{
@@ -34,15 +34,6 @@
 
 @media screen and (max-width: 769px) {
     
-    /* #root{
-        width: 99vw;
-    }
-    .App{
-        width: 99vw;
-    }
-    #header{
-        width: 90vw;
-    }*/
     #nav{
         width: 100vw;
     } 
