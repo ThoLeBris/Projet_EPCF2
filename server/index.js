@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 
 const adminRoutes = require('./routes/admin.routes');
 const productRoutes = require('./routes/product.routes');
+const orderRoutes = require('./routes/order.routes')
 
 //? Connect to DB
 const URL = process.env.MONGODB_URL;
@@ -31,6 +32,7 @@ app.use(express.json());
 //? Routes
 app.use('/api/admin', adminRoutes);
 app.use('/api/product', productRoutes);
+app.use('/api/order', orderRoutes);
 
 const Port = process.env.PORT;
 app.listen(Port);

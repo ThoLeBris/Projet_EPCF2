@@ -44,6 +44,10 @@ const Administration = () => {
                 <ProductList/>
 
                 <CreateProduct/>
+
+                <div className="line-container"><div className="line"></div></div>
+
+                <h2>Les Commandes / Clients</h2>
                 
             </div>
         )
@@ -51,7 +55,7 @@ const Administration = () => {
 
     return (
         <div id="administration" className="flex-center">
-            <h2>Administration</h2>
+            <h1>Administration</h1>
             <div>
                 {admin ? `Bonjour ${admin.adminName}` : `Si vous êtes administrateur, connectez-vous pour avoir accès à l'interface.`}
             </div>

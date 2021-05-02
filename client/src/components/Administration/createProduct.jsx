@@ -42,7 +42,7 @@ export default class CreateProduct extends Component {
     onSubmit(e){
         e.preventDefault();
 
-        console.log(`Prdt envoyé`);
+        console.log(`Produit envoyé`);
         console.log(`productName: ${this.state.productName}`);
         console.log(`productStock: ${this.state.productStock}`);
         console.log(`productDescription: ${this.state.productDescription}`);

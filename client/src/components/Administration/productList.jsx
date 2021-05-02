@@ -45,6 +45,10 @@ export default class ProductList extends Component {
         return (
             <div>
                 <div className="line-container"><div className="line"></div></div>
+                
+                <h2>Les Produits</h2>
+                
+                <div className="line-container"><div className="line"></div></div>
 
                 <h3>Liste des Produits</h3>
                 <table className="table product-table">
