@@ -135,8 +135,10 @@ export default class Formulaire extends Component {
                     <div className="line-container"><div className="line"></div></div>
                     
                     <h3>Votre commande</h3>
+                        <p className="gras">Laisser vide les champs inutilisés.</p>
+
                     
-                    <Choice/>
+                        <Choice/>
 
                     {/*//TODO : pouvoir en ajouter au click du btn-add, maximum 3 de plus, pouvoir supprimer 1 ligne avec btn-supp */}
 
