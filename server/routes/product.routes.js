@@ -4,14 +4,13 @@ const Product = require('../models/product.model');
 
 //? Créer un produit
 router.post('/createProduct', async (req,res)=>{
-    delete req.body._id;
     const product = new Product({...req.body});
     product.save()
         .then(()=> res.status(201).json({message: "Produit créer"}))
         .catch(error => res.status(400).json({ error }));
 })
 
-//? Lire TOUT les produits
+//? Lire TOUS les produits
 router.get('/getProduct', async (req,res)=>{
     Product.find()
     .then(products => res.status(200).json(products))
