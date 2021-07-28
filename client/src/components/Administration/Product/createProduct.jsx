@@ -9,13 +9,15 @@ export default class CreateProduct extends Component {
         this.onChangeProductStock = this.onChangeProductStock.bind(this);
         this.onChangeProductDescription = this.onChangeProductDescription.bind(this);
         this.onChangeProductPrice = this.onChangeProductPrice.bind(this);
+        // this.onChangeProductImage = this.onChangeProductImage.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             productName: '',
             productStock: '',
             productDescription: '',
-            productPrice: ''
+            productPrice: '',
+            // productImage: ''
         }
     }
 
@@ -39,6 +41,11 @@ export default class CreateProduct extends Component {
             productPrice: e.target.value
         });
     }
+    // onChangeProductImage(e){
+    //     this.setState({
+    //         productImage: e.target.value
+    //     });
+    // }
     onSubmit(e){
         e.preventDefault();
 
@@ -47,12 +54,14 @@ export default class CreateProduct extends Component {
         console.log(`productStock: ${this.state.productStock}`);
         console.log(`productDescription: ${this.state.productDescription}`);
         console.log(`productPrice: ${this.state.productPrice}`);
+        // console.log(`productImage: ${this.state.productImage}`);
 
         const newProduct ={
             productName: this.state.productName,
             productStock: this.state.productStock,
             productDescription: this.state.productDescription,
-            productPrice: this.state.productPrice
+            productPrice: this.state.productPrice,
+            // productImage: this.state.productImage
         }
 
         axios.post('http://localhost:8000/api/product/createProduct', newProduct)
@@ -62,7 +71,8 @@ export default class CreateProduct extends Component {
             productName: '',
             productStock: '',
             productDescription: '',
-            productPrice: ''
+            productPrice: '',
+            // productImage: ''
         });
     }
     
@@ -73,7 +83,7 @@ export default class CreateProduct extends Component {
 
                 <h3>Créer un Produit</h3>
 
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit} enctype="multipart/form-data">
                     <div className="center">
                         <label>Nom: </label>
                         <input  type="text"
@@ -123,6 +133,7 @@ export default class CreateProduct extends Component {
                                 required
                         />
                     </div>
+                    
                     <div className="flex-center">
                         <button type="submit" className="btn-connect">Créer un Produit</button>
                     </div>

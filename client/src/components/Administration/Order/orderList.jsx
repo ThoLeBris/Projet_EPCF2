@@ -47,7 +47,7 @@ export default class OrderList extends Component {
             <div>
                 <div className="line-container"><div className="line"></div></div>
                 
-                <h2 className="margin-10">Les Commandes / Clients</h2>
+                <h2 className="margin-10">Les Clients</h2>
 
                 <div className="line-container"><div className="line"></div></div>
                 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 import {Component} from 'react'
-import Choice from './Choice2';
+import Choice from './Choice';
 
 export default class Formulaire extends Component {
     constructor(props){

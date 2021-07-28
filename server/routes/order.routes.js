@@ -4,7 +4,6 @@ const Order = require('../models/order.model');
 
 //? Créer une commande
 router.post('/createOrder', async (req,res)=>{
-    delete req.body._id;
     const order = new Order({...req.body});
     order.save()
         .then(()=> res.status(201).json({message: "Commande créée"}))

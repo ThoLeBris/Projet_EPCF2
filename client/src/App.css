@@ -40,8 +40,9 @@
     font-family: Roboto-Bold, 'Courier New', Courier, monospace;
     display: flex;
     justify-content: space-around;
-    padding-top: 30px;
+    padding-top: 20px;
     margin: 0px;
+    background-color: black;
 }
 .nav-left{
     list-style: none;
@@ -51,20 +52,21 @@
     justify-content: space-between;
 }
 .nav-item{
-    background-color: #36CE00;
+    
     padding: 5px;
     border-radius: 5px;
     color: white;
     transition: all ease-in-out 0.2s;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 .nav-item:hover{
     transform: scale(1.05);
 }
 .commander{
-    background-color: #FFF500;
+    background-color: white;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     transition: all ease-in-out 0.2s;
     color: black;
     cursor: pointer;
@@ -87,19 +89,6 @@
 
     overflow: hidden;
     position: relative;
-}
-.logo:hover::after{
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    bottom: -50%;
-    left: -50%;
-    background: linear-gradient(to bottom, rgba(26, 90, 255, 0), rgba(255,255,255,0.5) 50%, rgba(26, 90, 255, 0));
-    transform: rotateZ(60deg) translate(-5em, 7.5em);
-}
-.logo:hover::after, .logo:focus::after{
-    animation: sheen 1s forwards;
 }
 
 h1{
@@ -238,12 +227,11 @@ h2 {
     justify-content: center;
 }
 .product-price-content{
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 10px 25px;
     margin: 20px;
 
-    background-color: #FFDAA3;
-    border-radius: 5px;
+    border-radius: 3px;
     font-family: Roboto-Bold;
 }
 .full-produit{
@@ -369,16 +357,22 @@ h2 {
     width: 300px;
 
     margin: 15px 0px;
-    border: none;
+    border: 2px solid black;
     border-radius: 6px;
-    background-color: #36CE00;
+    box-shadow: 0px 0px 2px;
 
     font-family: Roboto-Bold;
-    color: white;
     font-size: 1.75em;
     cursor: pointer;
-}
 
+    transition: all 0.3s ease-in-out;
+}
+.btn-envoyer:hover{
+    transform: translateY(-2px);
+}
+.btn-envoyer:active{
+    transform: translateY(2px);
+}
 .line-container{
     width: 100%;
     display: flex;
